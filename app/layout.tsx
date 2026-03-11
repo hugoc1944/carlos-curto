@@ -25,7 +25,6 @@ import Script from "next/script";
 FONTS
 ========================================================= */
 
-/* Brand / signature */
 const alexBrush = Alex_Brush({
   subsets: ["latin"],
   weight: ["400"],
@@ -33,7 +32,6 @@ const alexBrush = Alex_Brush({
   display: "swap",
 });
 
-/* Titles */
 const cormorant = Cormorant_Garamond({
   subsets: ["latin"],
   weight: ["300", "400", "500", "600", "700"],
@@ -41,7 +39,6 @@ const cormorant = Cormorant_Garamond({
   display: "swap",
 });
 
-/* Body */
 const sourceSans = Source_Sans_3({
   subsets: ["latin"],
   weight: ["300", "400", "500", "600", "700"],
@@ -117,12 +114,12 @@ export default function RootLayout({
               j.async=true;
               j.src='https://www.googletagmanager.com/gtm.js?id='+i+dl;
               f.parentNode.insertBefore(j,f);
-            })(window,document,'script','dataLayer','GTM-WXK2M2WR');
+            })(window,document,'script','dataLayer','GTM-MXM4V3VB');
             `,
           }}
         />
 
-        {/* Meta verification */}
+        {/* Facebook domain verification */}
         <meta
           name="facebook-domain-verification"
           content="kf8xxjtt9b29t6pxqfnyzdfbdn8pu6"
@@ -130,10 +127,10 @@ export default function RootLayout({
       </head>
 
       <body>
-        {/* GTM fallback */}
+        {/* Google Tag Manager (noscript) */}
         <noscript>
           <iframe
-            src="https://www.googletagmanager.com/ns.html?id=GTM-WXK2M2WR"
+            src="https://www.googletagmanager.com/ns.html?id=GTM-MXM4V3VB"
             height="0"
             width="0"
             style={{ display: "none", visibility: "hidden" }}
