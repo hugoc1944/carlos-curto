@@ -45,11 +45,11 @@ export function HomeHeroMessage() {
           poster="/images/placeholder/liberer_les_chaines.png"
         >
           <source
-            src="/videos/liberer_les_chaines.webm"
+            src="/videos/liberer_les_chaines_v2.webm"
             type="video/webm"
           />
           <source
-            src="/videos/liberer_les_chaines.mp4"
+            src="/videos/liberer_les_chaines_v2.mp4"
             type="video/mp4"
           />
         </video>
@@ -73,7 +73,7 @@ export function HomeHeroMessage() {
           >
             {/* Pill */}
             <SectionPill className="text-[14px] sm:text-[16px]">
-              ALIGNEMENT SPIRITUEL
+              ALINHAMENTO ESPIRITUAL | REFLEXÃO
             </SectionPill>
 
             {/* Title */}
@@ -94,9 +94,9 @@ export function HomeHeroMessage() {
                 lg:text-[64px]
               "
             >
-              LIBÉRER LES CHAÎNES
+              LIBERTE-SE DAS CORRENTES
               <br />
-              QUI FREINENT VOTRE VIE
+              QUE LIMITAM A SUA VIDA
             </h1>
 
             {/* Subtitle */}
@@ -112,22 +112,22 @@ export function HomeHeroMessage() {
                 leading-[1.15]
               "
             >
-              RÉÉQUILIBRER VOS CENTRES
+              REEQUILIBRE OS SEUS CENTROS
               <br />
-              ÉNERGÉTIQUES
+              ENERGÉTICOS
             </p>
 
             {/* CTA */}
             <div className="mt-5 sm:mt-6">
               <Link
-                href="/ecrits/alignement-spirituel-et-liberation"
-                aria-label="Lire l’écrit sur l’alignement spirituel et la libération"
+                href="/reflexoes/alinhamento-espiritual-e-libertacao"
+                aria-label="Leia o texto sobre alinhamento espiritual e libertação"
               >
                 <Button
                   variant="discover"
                   size="lg"
                 >
-                  APPROFONDIR
+                  APROFUNDAR
                 </Button>
               </Link>
             </div>

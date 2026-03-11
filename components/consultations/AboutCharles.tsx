@@ -2,7 +2,7 @@
 
 import Image from "next/image";
 
-export function AboutCharles() {
+export function AboutCarlos() {
   return (
     <section
       className="
@@ -64,13 +64,9 @@ export function AboutCharles() {
                   text-left
                 "
               >
-                À
+                SOBRE
                 <br />
-                PROPOS
-                <br />
-                DE
-                <br />
-                CHARLES
+                CARLOS
                 <br />
                 CURTO.
               </h2>
@@ -88,7 +84,7 @@ export function AboutCharles() {
             >
               <Image
                 src="/images/home/A_Propos.jpg"
-                alt="Charles Curto"
+                alt="Carlos Curto"
                 width={541}
                 height={721}
                 className="
@@ -130,15 +126,15 @@ export function AboutCharles() {
               text-left
             "
           >
-            Charles Curto accompagne depuis plus de quarante ans celles et ceux qui cherchent
-            clarté et apaisement intérieur. Il débute sa pratique à Paris en 1982, avant de
-            l’étendre progressivement à d’autres villes en France et à l’international,
-            notamment à Nice, Madrid, Toronto, Montréal et Lisbonne.
+            Carlos Curto tem acompanhado há mais de quarenta anos aqueles que procuram 
+            clareza e paz interior. Iniciou a sua prática em Paris, em 1982, e ao longo 
+            dos anos expandiu a sua atuação para outras cidades em França e no estrangeiro, 
+            como Nice, Madrid, Toronto, Montreal e Lisboa.
             <br /><br />
-            Son approche repose sur une lecture fine des dynamiques spirituelles et énergétiques,
-            alliée à une guidance concrète, toujours ancrée dans la réalité de la personne.
-            De nombreuses personnes ont fait appel à lui au fil des années, certaines dans une
-            relation de confiance établie sur le long terme.
+            A sua abordagem combina uma leitura profunda das dinâmicas espirituais e energéticas 
+            com uma orientação prática, sempre enraizada na realidade única de cada pessoa. 
+            Ao longo da sua trajetória, muitas pessoas encontraram no seu trabalho um guia e 
+            estabeleceram com ele uma relação de confiança sólida e duradoura.
           </p>
         </div>
       </div>

@@ -13,28 +13,26 @@ export function ConsultationsBooking() {
     <section className="w-full py-2 md:py-24">
       <div className="max-w-[1300px] mx-auto px-4 md:px-6">
 
-        <SectionSeparator id="consultations-modalites"/>
+        <SectionSeparator id="consultas-modalidades" />
 
         {/* Intro */}
         <div className="text-center mt-10 md:mt-15 mb-15 md:mb-20">
           <h2 className="font-title leading-[1] text-[38px] md:text-[72px] text-[#1F2E5A] font-semibold">
-            Réservez votre séance avec Charles Curto
+            Reserve a sua sessão com Carlos Curto
           </h2>
 
           <p className="font-body text-[18px] font-light md:font-normal md:text-[22px] mt-4 max-w-[90%] md:max-w-[85%] mx-auto">
-            Cette première séance d’une heure permet d’éclairer votre situation et de
-            définir comment Charles peut vous accompagner.
-            Une option spécifique est proposée pour les situations urgentes.
+            Esta sessão inicial de uma hora é um momento de clareza. Revela a sua situação atual e orienta o caminho que Carlos poderá percorrer consigo. Existe também uma opção específica para questões urgentes.
           </p>
         </div>
 
         {/* Overline */}
         <p className="text-center font-body text-[#777] tracking-[0.26em] uppercase text-[14px] md:text-[18px] mb-2">
-          Consultations privées
+          Consultas Privadas
         </p>
 
         <h3 className="text-center leading-[1] md:leading-[1.5] font-title text-[32px] text-[#1F2E5A] md:text-[48px] mb-6">
-          Choisissez le délai de votre séance
+          Escolha a sua sessão
         </h3>
 
         {/* Cards */}
@@ -45,62 +43,60 @@ export function ConsultationsBooking() {
 
         {/* Info box */}
         <InfoNotice>
-          Les rendez-vous sont volontairement limités afin de préserver un cadre de travail
-          calme et attentif pour chaque séance. Les créneaux disponibles peuvent évoluer
-          selon les périodes.
+          As consultas são limitadas para garantir um espaço de calma e total presença em cada sessão. A disponibilidade pode variar, ajustando-se para manter esta qualidade de atenção.
         </InfoNotice>
 
         {/* CTAs */}
         <div className="flex flex-col items-center gap-4 mt-10 leading-[1] md:leading-[1.5]">
-          <Link href="/contact" className="inline-block">
+          <Link href="/contacto" className="inline-block">
             <Button variant="softFilled" size="lg">
-              Une question avant de réserver ? Écrivez-nous
+              Tem dúvidas antes de reservar? Envie-nos uma mensagem
             </Button>
           </Link>
-            <a
-              href="https://www.instagram.com/charlescurto.fr"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="inline-block"
-              aria-label="Accéder aux ressources gratuites de Charles Curto sur Instagram"
-            >
-              <Button variant="authority" size="lg">
-                Ressources gratuites — Instagram
-              </Button>
-            </a>
+          <a
+            href="https://www.instagram.com/charlescurto.fr"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="inline-block"
+            aria-label="Aceder aos recursos gratuitos de Carlos Curto no Instagram"
+          >
+            <Button variant="authority" size="lg">
+              Recursos gratuitos — Instagram
+            </Button>
+          </a>
         </div>
 
         {/* Testimonials */}
         <h3 className="font-title text-[48px] text-center mt-20 mb-3">
-          Ils témoignent
+          Testemunhos
         </h3>
 
         <div className="grid grid-cols-1 md:grid-cols-3 gap-4 md:gap-6 mb-20">
-        <TestimonialCard
-          quote="En une heure, la situation est devenue lisible. J’ai pu trancher sans agitation."
-          author="Anne L., Paris (tél)"
-        />
-        <TestimonialCard
-          quote="Écoute précise, sans détour. Ce qui comptait est apparu clairement."
-          author="Claire M., Nice (visio)"
-        />
-        <TestimonialCard
-          quote="Je suis repartie apaisée, avec une décision simple et assumée."
-          author="Sophie R., Lyon (tél)"
-        />
-        <TestimonialCard
-          quote="Aucune projection, aucun jugement. Une lecture juste de ce que je vivais."
-          author="Élise D., Paris (cabinet)"
-        />
-        <TestimonialCard
-          quote="Le cadre m’a permis d’y voir clair là où tout se mélangeait."
-          author="Isabelle P., Genève (visio)"
-        />
-        <TestimonialCard
-          quote="Sobriété, précision, efficacité. Rien de superflu."
-          author="Marion T., Toronto (tél)"
-        />
-      </div>
+          <TestimonialCard
+            quote="Em apenas uma hora, tudo ficou claro. Pude tomar uma decisão sem ansiedade."
+            author="Anne L., Paris (telefone)"
+          />
+          <TestimonialCard
+            quote="Uma escuta precisa e direta. O que realmente importava tornou-se evidente."
+            author="Claire M., Nice (vídeo)"
+          />
+          <TestimonialCard
+            quote="Saí em paz, com uma decisão segura e simples."
+            author="Sophie R., Lyon (telefone)"
+          />
+          <TestimonialCard
+            quote="Sem julgamentos, sem projeções. Uma leitura clara do meu momento."
+            author="Élise D., Paris (presencial)"
+          />
+          <TestimonialCard
+            quote="O espaço proporcionou clareza onde antes tudo estava confuso."
+            author="Isabelle P., Genebra (vídeo)"
+          />
+          <TestimonialCard
+            quote="Sobriedade, precisão, eficácia. Tudo o que precisava, sem excessos."
+            author="Marion T., Toronto (telefone)"
+          />
+        </div>
 
         <SectionSeparator />
 

@@ -6,25 +6,25 @@ export function ConsultationsThemes() {
       key: "chemins-de-vie",
       video: "/videos/Chemins_de_vie",
       poster: "/images/placeholder/Chemins_de_vie.png",
-      label: "Chemins de vie &\ndécisions essentielles",
+      label: "Caminhos da Vida &\ndecisões essenciais",
     },
     {
       key: "tensions-familiales",
       video: "/videos/Tensions_familiales",
       poster: "/images/placeholder/Tensions_familiales.png",
-      label: "Tensions familiales\n& relations",
+      label: "Tensões familiares\n& relações",
     },
     {
       key: "blocages-schemas",
       video: "/videos/Blocages_&_schemas_main",
       poster: "/images/placeholder/Blocages_&_schemas_main.png",
-      label: "Blocages & schémas\nrépétitifs",
+      label: "Bloqueios & padrões\nrepetitivos",
     },
     {
       key: "alignement-interieur",
       video: "/videos/Alignement_interieur",
       poster: "/images/placeholder/Alignement_interieur.png",
-      label: "Alignement intérieur\n& apaisement",
+      label: "Alinhamento interior\n& serenidade",
     },
   ];
 
@@ -44,7 +44,7 @@ export function ConsultationsThemes() {
             md:mb-14
           "
         >
-          Quels thèmes aborder&nbsp;?
+          Que temas deseja explorar&nbsp;?
         </h2>
 
         {/* ================= GRID ================= */}

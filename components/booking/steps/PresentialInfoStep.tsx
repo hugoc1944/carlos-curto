@@ -15,27 +15,26 @@ export function PresentialInfoStep({
     <div className="max-w-[520px] mx-auto space-y-8">
       <div className="space-y-3">
         <h2 className="font-title text-[28px] text-[#1F2E5A]">
-          Consultation en cabinet
+          Consulta Presencial
         </h2>
 
         <p className="font-body text-[16px] leading-[1.7] text-[#5F5B52]">
-          Les consultations en cabinet sont organisées directement par notre
-          équipe afin de garantir la meilleure disponibilité possible.
-        </p>
+          As consultas presenciais são organizadas pela nossa equipa de forma personalizada, tendo em conta as disponibilidades e o melhor enquadramento para si.        </p>
 
         <p className="font-body text-[15px] leading-[1.7] text-[#5F5B52]">
-          Vous serez contacté(e) dans un délai inférieur à 24 heures
-          <span className="text-[#8F8A7E]"> (généralement sous quelques heures)</span> afin de confirmer le créneau.
+          Será contactado(a) num prazo máximo de 24 horas{" "}
+          <span className="text-[#8F8A7E]">(na maioria dos casos, dentro de algumas horas) </span> 
+           para confirmar o horário que melhor se adapte às suas necessidades.
         </p>
       </div>
 
       <div className="flex justify-between pt-6">
         <Button variant="softFilled" onClick={onBack}>
-          Retour
+          Voltar
         </Button>
 
         <Button variant="authority" size="lg" onClick={onNext}>
-          Continuer
+          Continuar
         </Button>
       </div>
     </div>

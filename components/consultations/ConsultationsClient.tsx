@@ -10,7 +10,7 @@ import { ConsultationsHeader } from "@/components/consultations/ConsultationsHea
 import { PageTransition } from "@/components/layout/PageTransition";
 import { ConsultationsThemes } from "@/components/consultations/ConsultationsThemes";
 import { ConsultationsBooking } from "@/components/consultations/ConsultationsBooking";
-import { AboutCharles } from "@/components/consultations/AboutCharles";
+import { AboutCarlos } from "@/components/consultations/AboutCharles";
 import { ConsultationsFAQ } from "@/components/consultations/ConsultationsFAQ";
 import { useScrollToHash } from "@/hooks/useScrollToHash";
 
@@ -28,7 +28,7 @@ export default function ConsultationsPage() {
         <ConsultationsHeader />
         <ConsultationsThemes />
         <ConsultationsBooking />
-        <AboutCharles/>
+        <AboutCarlos/>
         <ConsultationsFAQ />
 
         </m.main>

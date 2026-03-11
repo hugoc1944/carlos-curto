@@ -7,40 +7,40 @@ import { motion as motionTokens } from "@/styles/motion";
 
 const faqItems = [
   {
-    question: "Quels types de situations peut-on aborder en consultation ?",
+    question: "Que tipos de situações podem ser abordadas numa consulta?",
     answer:
-      "Situations familiales, décisions importantes, périodes de blocage, relations, schémas répétitifs, orientation personnelle ou professionnelle, déséquilibres émotionnels ou énergétiques.",
+      "Nas consultas, podemos explorar situações familiares, decisões importantes, períodos de bloqueio, relações pessoais, padrões repetitivos, orientação espiritual ou profissional, bem como desequilíbrios emocionais ou energéticos. O foco está sempre no seu bem-estar e na sua harmonia.",
   },
   {
-    question: "Comment se déroule une première consultation ?",
+    question: "Como decorre uma primeira consulta?",
     answer:
-      "La séance dure une heure. Elle commence par un échange permettant de clarifier votre situation, suivi d’une guidance adaptée à vos besoins, dans un cadre calme, confidentiel et sans jugement.",
+      "A primeira consulta dura cerca de uma hora e decorre num ambiente calmo e isento de julgamentos. Começamos com uma conversa para compreender melhor a sua situação. Em seguida, ofereço uma orientação personalizada, adaptada às suas necessidades e ao momento que está a viver.",
   },
   {
     question:
-      "Quelle est la différence entre consultation privée et coaching exclusif ?",
+      "Qual é a diferença entre uma consulta privada e um acompanhamento exclusivo?",
     answer:
-      "La consultation privée répond à une question ou une situation précise. Le coaching exclusif s’inscrit dans la durée, avec un accompagnement plus approfondi et évolutif.",
+      "Uma consulta privada foca-se numa questão ou desafio específico do momento. O acompanhamento exclusivo, por outro lado, é um processo contínuo e mais profundo que apoia a sua evolução ao longo do tempo, promovendo transformações mais amplas na sua vida.",
   },
   {
-    question: "Les consultations peuvent-elles se faire à distance ?",
+    question: "As consultas podem ser realizadas à distância?",
     answer:
-      "Oui. Les consultations peuvent avoir lieu par téléphone ou en visio, avec la même qualité d’écoute et de guidance qu’en présentiel.",
+      "Sim, as consultas podem ser realizadas por telefone ou videochamada. A qualidade da atenção e da orientação mantém-se exatamente igual à de uma consulta presencial, garantindo sempre um espaço de confiança e conexão.",
   },
   {
-    question: "Proposez-vous des consultations en urgence ?",
+    question: "Propõe consultas em situações de urgência?",
     answer:
-      "Oui. Une formule spécifique est proposée pour les situations urgentes nécessitant une réponse rapide, sous réserve de disponibilités.",
+      "Sim, existem opções específicas para situações urgentes que requerem uma resposta rápida. O atendimento está sujeito à disponibilidade, mas farei o possível para estar presente no momento em que mais precisar.",
   },
   {
-    question: "Faut-il se préparer avant une consultation ?",
+    question: "É necessário preparar-se antes de uma consulta?",
     answer:
-      "Aucune préparation particulière n’est nécessaire. Il suffit d’aborder la séance avec ouverture et sincérité.",
+      "Não é necessária nenhuma preparação específica. Basta chegar com mente aberta e sinceridade, permitindo que o processo flua de forma natural e autêntica.",
   },
   {
-    question: "Les consultations sont-elles confidentielles ?",
+    question: "As consultas são confidenciais?",
     answer:
-      "Absolument. Tous les échanges sont strictement confidentiels et menés dans le respect total de votre vie privée.",
+      "Sim, todas as consultas são absolutamente confidenciais. Todo o processo é conduzido com o máximo respeito pela sua privacidade, garantindo um espaço seguro e acolhedor.",
   },
 ];
 
@@ -56,7 +56,7 @@ export function ConsultationsFAQ() {
       <div className="max-w-[900px] mx-auto px-6">
         {/* Title */}
         <h2 className="font-title text-[48px] leading-[1] md:leading-[1.5] md:text-[64px] text-[#1F2E5A] text-center mb-6 md:mb-10">
-          Avant votre consultation
+          Antes da sua consulta
         </h2>
 
         {/* Accordion */}

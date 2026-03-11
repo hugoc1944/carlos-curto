@@ -21,7 +21,7 @@ export function EditorialCTA({ href, label }: EditorialCTAProps) {
         "
       >
         <p className="font-body text-[16px] text-[#6B6B6B] mb-6 leading-[1.6]">
-          Certaines réflexions appellent parfois un éclairage plus personnel.
+          Algumas reflexões convidam-nos a procurar um entendimento mais íntimo e profundo.
         </p>
 
         <Link

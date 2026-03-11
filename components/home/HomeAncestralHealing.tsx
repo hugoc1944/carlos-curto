@@ -14,7 +14,7 @@ export function HomeAncestralHealing() {
         mt-16 md:mt-20
       "
     >
-      {/* DARK BLOCK */}
+      {/* BLOCO ESCURO */}
       <div
         className="
           max-w-[1200px]
@@ -31,7 +31,7 @@ export function HomeAncestralHealing() {
           gap-8 lg:gap-10
         "
       >
-        {/* LEFT — TEXT (fully centered) */}
+        {/* ESQUERDA — TEXTO (completamente centrado) */}
         <div className="flex justify-center">
           <div
             className="
@@ -45,10 +45,10 @@ export function HomeAncestralHealing() {
             "
           >
             <SectionPill className="text-[14px] sm:text-[16px]">
-              LIBÉREZ VOS LIGNÉES
+              LIBERTE AS SUAS LINHAGENS
             </SectionPill>
 
-            {/* Title */}
+            {/* Título */}
             <h2 className="font-title text-white leading-[1.05]">
               <span
                 className="
@@ -63,7 +63,7 @@ export function HomeAncestralHealing() {
                   opacity-90
                 "
               >
-                GUÉRISON ANCESTRALE &amp;
+                CURA ANCESTRAL E
               </span>
 
               <span
@@ -75,25 +75,25 @@ export function HomeAncestralHealing() {
                   font-semibold
                 "
               >
-                HARMONISATION
+                HARMONIZAÇÃO ENERGÉTICA
               </span>
             </h2>
 
             {/* CTA */}
             <div className="mt-2 sm:mt-4">
               <Link
-                href="/ecrits/guerison-ancestrale-et-lignees"
-                aria-label="Lire l’écrit sur la guérison ancestrale et les lignées"
+                href="/reflexoes/cura-ancestral"
+                aria-label="Leia sobre a cura ancestral e as linhagens"
               >
                 <Button variant="discover" size="lg">
-                  DÉCOUVRIR
+                  LER A REFLEXÃO
                 </Button>
               </Link>
             </div>
           </div>
         </div>
 
-        {/* RIGHT — VIDEO */}
+        {/* DIREITA — VÍDEO */}
         <div
           className="
             relative
@@ -114,11 +114,11 @@ export function HomeAncestralHealing() {
             poster="/images/placeholder/guerison_ancestral.png"
           >
             <source
-              src="/videos/guerison_ancestral.webm"
+              src="/videos/cura_ancestral.webm"
               type="video/webm"
             />
             <source
-              src="/videos/guerison_ancestral.mp4"
+              src="/videos/cura_ancestral.mp4"
               type="video/mp4"
             />
           </video>

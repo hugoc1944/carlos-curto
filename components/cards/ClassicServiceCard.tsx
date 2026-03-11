@@ -11,28 +11,29 @@ import { useBooking } from "@/contexts/BookingContext";
 
 export function ClassicServiceCard() {
   const { openBooking } = useBooking();
+
   return (
     <CardElement className="p-6 pt-8 md:p-8 flex flex-col h-full">
-      <CardBadge variant="outline">CONSULTATION CLASSIQUE</CardBadge>
+      <CardBadge variant="outline">CONSULTA CLÁSSICA</CardBadge>
 
       <CardTitle className="mt-6 text-[30px] font-semibold leading-[1.1]">
-        À partir de 72 h
+        A partir de 72h
       </CardTitle>
 
       <CardDescription className="mt-3 font-body text-[16px] leading-[1.6] text-[#6B6B6B]">
-        <strong>La formule la plus calme et la plus demandée.</strong><br />
-        Cette consultation s’adresse aux situations pouvant attendre quelques jours.
-        Elle offre un cadre posé, propice à l’écoute, à la compréhension et à la
-        clarification de votre situation.
+        <strong>Uma abordagem tranquila e profundamente acolhedora.</strong><br />
+        Esta consulta destina-se a situações que podem aguardar alguns dias.
+        Oferece um espaço sereno e seguro, propício à escuta, à compreensão
+        e à clarificação da sua situação.
       </CardDescription>
 
       <CardFeatureList
         className="mt-4 text-[15px]"
         items={[
-          "Séance d’une heure",
-          "Téléphone ou cabinet (Paris / Nice)",
-          "Échange confidentiel et sans jugement",
-          "Le meilleur choix « calme & premium »",
+          "Sessão de uma hora",
+          "Telefone ou presencial (Lisboa / Porto)",
+          "Troca confidencial e sem julgamentos",
+          "A escolha ideal entre serenidade e qualidade premium",
         ]}
       />
 
@@ -42,26 +43,25 @@ export function ClassicServiceCard() {
         variant="primary"
         size="lg"
         className="w-full text-[18px] normal-case mt-8 leading-[1]"
-          onClick={() => {
-            if (typeof window !== "undefined") {
-              window.dataLayer = window.dataLayer || [];
-              window.dataLayer.push({
-                event: "booking_start",
-                service_type: "classic",
-                service_category: "consultation",
-              });
-            }
+        onClick={() => {
+          if (typeof window !== "undefined") {
+            window.dataLayer = window.dataLayer || [];
+            window.dataLayer.push({
+              event: "booking_start",
+              service_type: "classic",
+              service_category: "consultation",
+            });
+          }
 
-            openBooking("classic");
-          }}
+          openBooking("classic");
+        }}
       >
-        Réserver une consultation — téléphone / cabinet
+        Reservar uma consulta — telefone / presencial
       </Button>
 
       <CardFooter className="mt-4 text-[14px] text-[#6B6B6B]">
-        Disponibilités limitées
+        Disponibilidade limitada
       </CardFooter>
     </CardElement>
-
   );
 }

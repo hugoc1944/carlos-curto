@@ -83,11 +83,11 @@ export function CalendarStep({
       {/* Header */}
       <div>
         <h2 className="font-title text-[28px] text-[#1F2E5A]">
-          Choisissez une date
+          Escolha uma data
         </h2>
         <p className="mt-2 font-body text-[15px] text-[#6B6B6B]">
-          Les disponibilités affichées correspondent aux prochains créneaux
-          possibles.
+          As disponibilidades apresentadas refletem os próximos horários
+          possíveis, guiados pela sabedoria do momento certo.
         </p>
       </div>
 
@@ -114,8 +114,8 @@ export function CalendarStep({
 
       {/* Weekdays */}
       <div className="grid grid-cols-7 text-center text-[13px] text-[#8F8A7E]">
-        {["L", "M", "M", "J", "V", "S", "D"].map((d, i) => (
-        <div key={i}>{d}</div>
+        {["S", "T", "Q", "Q", "S", "S", "D"].map((d, i) => (
+          <div key={i}>{d}</div>
         ))}
       </div>
 
@@ -138,7 +138,7 @@ export function CalendarStep({
                 text-[14px]
                 transition
                 ${
-                disabled
+                  disabled
                     ? "text-[#C8C5BE] cursor-not-allowed"
                     : "cursor-pointer text-[#1F2E5A] hover:bg-[#ECE9E2]"
                 }
@@ -155,25 +155,26 @@ export function CalendarStep({
       {/* Footer hint */}
       {serviceType !== "urgent" && (
         <p className="font-body text-[13px] text-[#8F8A7E]">
-          Les consultations standards sont proposées à partir de J+2.
+          As consultas standard estão disponíveis a partir de J+2, respeitando
+          o alinhamento espiritual do tempo.
         </p>
       )}
 
       {/* Navigation */}
-    <div className="flex items-center justify-between pt-4">
-    <button
-        onClick={onBack}
-        className="
+      <div className="flex items-center justify-between pt-4">
+        <button
+          onClick={onBack}
+          className="
         text-[14px]
         text-[#6B6B6B]
         cursor-pointer
         hover:text-[#1F2E5A]
         transition
         "
-    >
-        ← Modifier le mode de consultation
-    </button>
-    </div>
+        >
+          ← Alterar o método de consulta
+        </button>
+      </div>
     </div>
   );
 }

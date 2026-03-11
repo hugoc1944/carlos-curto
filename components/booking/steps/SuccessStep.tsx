@@ -7,23 +7,23 @@ interface SuccessStepProps {
   onClose?: () => void;
 }
 
-export function SuccessStep({ onClose }: SuccessStepProps) { 
-    useEffect(() => {
-        if (typeof window !== "undefined") {
-        window.dataLayer = window.dataLayer || [];
-        window.dataLayer.push({
-            event: "booking_submit_success",
-        });
-        }
-    }, []);
+export function SuccessStep({ onClose }: SuccessStepProps) {
+  useEffect(() => {
+    if (typeof window !== "undefined") {
+      window.dataLayer = window.dataLayer || [];
+      window.dataLayer.push({
+        event: "booking_submit_success",
+      });
+    }
+  }, []);
 
-    useEffect(() => {
+  useEffect(() => {
     if (typeof window !== "undefined" && typeof (window as any).fbq === "function") {
       (window as any).fbq("track", "Lead");
     }
   }, []);
 
-    return (
+  return (
     <div className="flex flex-col items-center justify-center text-center max-w-[420px] mx-auto space-y-6">
       
       {/* Visual anchor */}
@@ -33,29 +33,28 @@ export function SuccessStep({ onClose }: SuccessStepProps) {
 
       {/* Title */}
       <h2 className="font-title text-[26px] text-[#1F2E5A]">
-        Votre demande a bien été envoyée
+        O seu pedido foi enviado com sucesso
       </h2>
 
       {/* Body */}
       <p className="font-body text-[16px] leading-[1.7] text-[#5F5B52]">
-        Un email de confirmation vient de vous être adressé.
+        Recebemos o seu pedido e enviámos um email de confirmação para o seu endereço de correio eletrónico.
       </p>
 
       <p className="font-body text-[16px] leading-[1.7] text-[#5F5B52]">
-        Nous vous contacterons prochainement par téléphone afin de confirmer
-        les modalités de votre consultation.
+        Em breve, entraremos em contacto consigo por telefone para confirmar os detalhes da sua consulta e orientá-lo sobre os próximos passos.
       </p>
 
       {/* Gentle closure */}
       <p className="font-body text-[14px] text-[#8F8A7E] pt-2">
-        Vous pouvez désormais fermer cette fenêtre en toute tranquillité.
+        Agora pode fechar esta janela com total tranquilidade e confiança.
       </p>
 
       {/* Optional action */}
       {onClose && (
         <div className="pt-4">
           <Button variant="softFilled" size="md" onClick={onClose}>
-            Fermer
+            Fechar
           </Button>
         </div>
       )}

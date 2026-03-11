@@ -13,17 +13,16 @@ export function SignatureServiceCard() {
   return (
     <CardElement className="w-[520px] p-8 flex flex-col">
       <CardBadge variant="outline">
-        SÉANCE SIGNATURE
+        SESSÃO SIGNATURE
       </CardBadge>
 
       <CardTitle className="mt-5">
-        Une première rencontre essentielle
+        Um encontro essencial para a sua jornada
       </CardTitle>
 
       {/* First paragraph */}
       <p className="font-body text-[18px] leading-[1.6] mt-3">
-        Une séance d’une heure, confidentielle et personnalisée, guidée par une question
-        simple&nbsp;:
+        Uma sessão única de uma hora, confidencial e profundamente personalizada, guiada por uma pergunta transformadora:&nbsp;
       </p>
 
       {/* Highlighted question */}
@@ -32,28 +31,26 @@ export function SignatureServiceCard() {
           font-body
           font-bold
           text-[18px]
-          
           bg-textHighlightGolden
           bg-clip-text
           text-transparent
         "
       >
-        « Comment puis-je vous aider&nbsp;? »
+        « Como posso ajudá-lo(a)? »
       </p>
 
       {/* Italic paragraph */}
       <p className="font-body italic text-[18px] leading-[1.6] mt-4">
-        Cette première rencontre permet d’évaluer la nature du travail à engager, dans un
-        cadre clair, respectueux et sans engagement dans la durée.
+        Este primeiro encontro é uma oportunidade para explorar com clareza e respeito o caminho que deseja seguir, sem compromissos futuros ou pressões externas.
       </p>
 
       <PremiumFeatureList
         className="mt-6"
         items={[
-          "Échange confidentiel et sans jugement",
-          "Séance d’une heure",
-          "Téléphone ou cabinet (Paris / Nice)",
-          "Aucune obligation de poursuivre",
+          "Troca confidencial e sem julgamentos",
+          "Sessão de uma hora",
+          "Atendimento por telefone ou presencial (Lisboa / Porto)",
+          "Sem obrigação de continuidade",
         ]}
       />
 
@@ -63,24 +60,24 @@ export function SignatureServiceCard() {
         variant="primary"
         size="lg"
         className="w-full text-[18px] leading-[1.2] tracking-[0.08em] font-semibold normal-case py-[18px] mt-10"
-                  onClick={() => {
-            if (typeof window !== "undefined") {
-              window.dataLayer = window.dataLayer || [];
-              window.dataLayer.push({
-                event: "booking_start",
-                service_type: "signature",
-                service_category: "coaching",
-              });
-            }
+        onClick={() => {
+          if (typeof window !== "undefined") {
+            window.dataLayer = window.dataLayer || [];
+            window.dataLayer.push({
+              event: "booking_start",
+              service_type: "signature",
+              service_category: "coaching",
+            });
+          }
 
-            openBooking("signature");
-          }}
+          openBooking("signature");
+        }}
       >
-        Réserver la Séance Signature
+        Reservar a Sessão Signature
       </Button>
 
       <CardFooter className="mt-5">
-        Disponibilités limitées
+        Vagas limitadas, reserve já.
       </CardFooter>
     </CardElement>
   );

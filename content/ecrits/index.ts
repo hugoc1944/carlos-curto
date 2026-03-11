@@ -2,19 +2,19 @@
 import type { Ecrit } from "@/lib/ecrits";
 
 export const ECRITS: Record<string, Ecrit["meta"]> = {
-  "alignement-spirituel-et-liberation": {
-    title: "Alignement spirituel et libération des chaînes invisibles",
+  "alinhamento-espiritual-e-libertacao": {
+    title: "Alinhamento espiritual e libertação das correntes invisíveis",
     description:
-      "Lorsque l’énergie se disperse et que le chemin semble freiné, un réalignement intérieur peut redonner cohérence et clarté au mouvement.",
+      "Quando a nossa energia está dispersa e o caminho parece bloqueado, um realinhamento interior pode trazer coerência, clareza e harmonia ao fluxo do nosso ser.",
     readingTime: "6 min",
-    themes: ["Alignement spirituel", "Énergie", "Libération intérieure"],
+    themes: ["Alinhamento espiritual", "Energia", "Libertação interior"],
   },
 
-  "guerison-ancestrale-et-lignees": {
-    title: "Guérison ancestrale et harmonisation des lignées",
+  "cura-ancestral": {
+    title: "Cura ancestral e harmonização das linhagens",
     description:
-      "Certaines entraves trouvent leur origine au-delà de l’individu. Comprendre les dynamiques de lignée permet parfois de libérer ce qui ne nous appartient pas.",
+      "Alguns bloqueios têm raízes que transcendem o indivíduo. Ao compreender as dinâmicas das nossas linhagens, podemos libertar padrões que não nos pertencem e restaurar o equilíbrio na nossa jornada.",
     readingTime: "8 min",
-    themes: ["Guérison ancestrale", "Lignées", "Énergie", "Transmission"],
+    themes: ["Cura ancestral", "Linhagens", "Energia", "Transmissão"],
   },
 };

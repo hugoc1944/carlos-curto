@@ -63,7 +63,7 @@ export function InternationalHeader() {
             md:leading-[1.05]
           "
         >
-          Présence internationale
+          Presença Internacional
         </h1>
 
         {/* Small paragraph */}
@@ -78,9 +78,7 @@ export function InternationalHeader() {
             max-w-[620px]
           "
         >
-          Depuis de nombreuses années, Charles accompagne des personnes bien
-          au-delà de la France, lors de consultations menées entre l’Europe
-          et l’Amérique du Nord, selon les lieux et les périodes.
+          Ao longo dos anos, Carlos Curto tem guiado almas com sabedoria e sensibilidade, transcendendo as fronteiras de Portugal. As suas consultas, realizadas entre a Europa e a América do Norte, são testemunho de um profundo entendimento espiritual, sempre adaptando-se aos momentos e lugares que melhor ressoam com cada indivíduo.
         </p>
       </div>
     </section>

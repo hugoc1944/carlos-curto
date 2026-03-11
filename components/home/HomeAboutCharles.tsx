@@ -2,7 +2,7 @@
 
 import Image from "next/image";
 
-export function HomeAboutCharles({ anchorId }: { anchorId?: string }) {
+export function HomeAboutCarlos({ anchorId }: { anchorId?: string }) {
   return (
     <section
       className="
@@ -66,13 +66,9 @@ export function HomeAboutCharles({ anchorId }: { anchorId?: string }) {
                   text-left
                 "
               >
-                À
+                SOBRE
                 <br />
-                PROPOS
-                <br />
-                DE
-                <br />
-                CHARLES
+                CARLOS
                 <br />
                 CURTO.
               </h2>
@@ -90,7 +86,7 @@ export function HomeAboutCharles({ anchorId }: { anchorId?: string }) {
             >
               <Image
                 src="/images/home/A_Propos.jpg"
-                alt="Charles Curto"
+                alt="Carlos Curto"
                 width={541}
                 height={721}
                 className="
@@ -121,27 +117,27 @@ export function HomeAboutCharles({ anchorId }: { anchorId?: string }) {
           "
         >
           <p
-          className="
-            font-body
-            text-[22px]
-            md:text-[24px]
-            lg:text-[26px]
-            leading-[1.8]
-            font-light
-            tracking-[0.04em]
-            text-left
-          "
-        >
-          Charles Curto accompagne depuis plus de quarante ans celles et ceux qui cherchent
-          clarté et apaisement intérieur. Il débute sa pratique à Paris en 1982, avant de
-          l’étendre progressivement à d’autres villes en France et à l’international,
-          notamment à Nice, Madrid, Toronto, Montréal et Lisbonne.
-          <br /><br />
-          Son approche repose sur une lecture fine des dynamiques spirituelles et énergétiques,
-          alliée à une guidance concrète, toujours ancrée dans la réalité de la personne.
-          De nombreuses personnes ont fait appel à lui au fil des années, certaines dans une
-          relation de confiance établie sur le long terme.
-        </p>
+            className="
+              font-body
+              text-[22px]
+              md:text-[24px]
+              lg:text-[26px]
+              leading-[1.8]
+              font-light
+              tracking-[0.04em]
+              text-left
+            "
+          >
+            Carlos Curto tem dedicado mais de quarenta anos a guiar aqueles que procuram 
+            clareza e serenidade interior. A sua jornada teve início em Paris, em 1982, e, 
+            desde então, expandiu-se para várias cidades em França e pelo mundo, incluindo 
+            Nice, Madrid, Toronto, Montreal e Lisboa.
+            <br /><br />
+            A abordagem de Carlos combina uma leitura profunda das dinâmicas espirituais 
+            e energéticas com uma orientação prática, sempre alinhada à realidade e às necessidades 
+            de cada pessoa. Ao longo dos anos, muitas pessoas encontraram nele um guia confiável, 
+            construindo relações de confiança e acompanhamento duradouro.
+          </p>
         </div>
       </div>
     </section>

@@ -12,18 +12,16 @@ export function HomeExclusiveCoachingCard() {
               <StarBadge />
       
               <h3 className="font-title text-[36px] leading-[1] md:leading-[1.5] font-semibold text-text">
-                Coaching Exclusif
+                Coaching Exclusivo
               </h3>
           </div>
 
       <p className="font-body text-[21px] leading-[1.6] mt-3 md:mt-0 text-[#6B6B6B]">
-        Téléphone · Cabinet Paris / Nice
+        Telefone · Escritório Lisboa / Porto
       </p>
 
       <p className="font-body text-[21px] leading-[1.7] text-text">
-        Un accompagnement personnalisé pour libérer vos blocages, réaligner vos 
-        chemins intérieurs et transformer durablement ce qui freine votre vie. Un 
-        suivi confidentiel, étape par étape, pour résoudre vos problématiques familiales, émotionnelles et énergétiques.
+        Um acompanhamento profundamente transformador para desbloquear barreiras, realinhar os seus caminhos internos e permitir que a harmonia flua de forma autêntica e duradoura. Este suporte personalizado oferece total confidencialidade e um passo a passo cuidadoso para resolver questões familiares, emocionais e energéticas que afetam o seu equilíbrio e bem-estar.
       </p>
 
       <div className="flex flex-col mt-auto gap-3 pt-8">
@@ -31,12 +29,12 @@ export function HomeExclusiveCoachingCard() {
         <div className="flex flex-col gap-3">
           <Link href="/coaching" className="inline-block">
             <Button variant="primary" className="w-full text-[19px]">
-              Découvrir l’accompagnement
+              Descobrir o acompanhamento
             </Button>
           </Link>
-          <Link href="/coaching#comprendre-coaching">
+          <Link href="/coaching#saber-mais-coaching">
             <Button variant="soft" className="w-full text-[19px]">
-              Comprendre le coaching exclusif
+              Compreender o coaching exclusivo
             </Button>
           </Link>
         </div>
@@ -44,7 +42,7 @@ export function HomeExclusiveCoachingCard() {
         {/* Helper text */}
         <div className="h-[18px] flex items-center justify-center">
           <span className="text-[20px] md:text-[18px] text-[#6B6B6B] font-light">
-            Première séance
+            Primeira sessão
           </span>
         </div>
       </div>

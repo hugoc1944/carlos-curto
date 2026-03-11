@@ -22,31 +22,32 @@ export function HomeQuoteBand() {
           aria-hidden="true"
         >
           <video
-          className="
-            absolute
-            inset-0
-            w-full
-            h-full
-            object-cover
+            className="
+              absolute
+              inset-0
+              w-full
+              h-full
+              object-cover
 
-            /* Mobile-only overscan fix */
-            max-md:-top-[1px]
-            max-md:-bottom-[1px]
-            max-md:-left-[1px]
-            max-md:-right-[1px]
-            max-md:w-[calc(100%+2px)]
-            max-md:h-[calc(100%+2px)]
-          "
-          autoPlay
-          muted
-          loop
-          playsInline
-          preload="metadata"
-          poster="/images/placeholder/band.png"
-        >
-          <source src="/videos/band.webm" type="video/webm" />
-          <source src="/videos/band.mp4" type="video/mp4" />
-        </video>
+
+              /* Mobile-only overscan fix */
+              max-md:-top-[1px]
+              max-md:-bottom-[1px]
+              max-md:-left-[1px]
+              max-md:-right-[1px]
+              max-md:w-[calc(100%+2px)]
+              max-md:h-[calc(100%+2px)]
+            "
+            autoPlay
+            muted
+            loop
+            playsInline
+            preload="metadata"
+            poster="/images/placeholder/band.png"
+          >
+            <source src="/videos/band.webm" type="video/webm" />
+            <source src="/videos/band.mp4" type="video/mp4" />
+          </video>
         </div>
 
         {/* =========================================================
@@ -81,9 +82,9 @@ export function HomeQuoteBand() {
                 lg:text-[64px]
               "
             >
-              “N’oublie jamais d’apaiser ton esprit.
+              “Nunca te esqueças de silenciar a tua mente. 
               <br />
-              C’est ainsi que s’ouvrent les chemins de ta vie.”
+              É nesse silêncio que os caminhos da tua vida se revelam.”
             </p>
 
             <p
@@ -96,7 +97,7 @@ export function HomeQuoteBand() {
                 tracking-[0.04em]
               "
             >
-              — Charles Curto
+              — Carlos Curto
             </p>
 
             <p
@@ -111,8 +112,8 @@ export function HomeQuoteBand() {
                 tracking-[0.04em]
               "
             >
-              Accompagner chacun vers cette paix <br />
-              intérieure est le cœur de ma mission.
+              Guiar cada pessoa rumo a esta paz <br />
+              interior é o centro da minha missão.
             </p>
           </div>
         </div>

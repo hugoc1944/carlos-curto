@@ -7,39 +7,39 @@ import { motion as motionTokens } from "@/styles/motion";
 
 const faqItems = [
   {
-    question: "En quoi consiste le coaching privé exclusif ?",
+    question: "Em que consiste o coaching privado exclusivo?",
     answer:
-      "Le coaching privé exclusif est un accompagnement individuel dans la durée. Il permet d’aborder des périodes clés de votre vie avec continuité, clarté et profondeur, en adaptant le rythme et les séances à vos besoins.",
+      "O coaching privado exclusivo oferece um acompanhamento individual e profundo, cuidadosamente adaptado às suas necessidades e ao seu ritmo de vida. É um espaço sagrado de suporte contínuo, criado para ajudá-lo a atravessar momentos transformadores com clareza, equilíbrio e propósito.",
   },
   {
-    question: "Comment débute un accompagnement ?",
+    question: "Como começa um acompanhamento?",
     answer:
-      "Chaque accompagnement débute par une Séance Signature. Cette première rencontre permet de poser un cadre clair, d’évaluer la nature du travail à engager et de vérifier si un accompagnement dans la durée est pertinent.",
+      "Cada acompanhamento inicia-se com uma Sessão Assinatura. Este encontro inicial é uma oportunidade para estabelecer um entendimento claro do caminho a seguir, avaliar as suas necessidades e decidir, em conjunto, se o coaching contínuo é o mais indicado para si.",
   },
   {
-    question: "Quelle est la différence avec une consultation privée ?",
+    question: "Qual é a diferença em relação a uma consulta privada?",
     answer:
-      "La consultation privée répond à une question ou une situation précise. Le coaching exclusif s’inscrit dans le temps, avec un suivi régulier et une relation de travail construite séance après séance.",
+      "Enquanto uma consulta privada aborda uma questão ou situação específica, o coaching exclusivo é um processo contínuo e profundo. Envolve um acompanhamento regular, no qual cada sessão se constrói sobre a anterior, criando uma relação de trabalho significativa e transformadora.",
   },
   {
-    question: "À quelle fréquence ont lieu les séances ?",
+    question: "Com que frequência ocorrem as sessões?",
     answer:
-      "La fréquence est définie ensemble, en fonction de votre situation, de vos périodes de vie et de votre rythme personnel. Elle peut évoluer au fil du temps.",
+      "A frequência das sessões é personalizada e ajustada à sua situação atual, ciclos de vida e ritmo pessoal, respeitando sempre a sua jornada. Este ritmo pode ser redefinido à medida que o processo evolui.",
   },
   {
-    question: "Y a-t-il un engagement dans la durée ?",
+    question: "Existe um compromisso de longa duração?",
     answer:
-      "Non. Le coaching repose sur une relation libre et ajustée. Chaque accompagnement se construit progressivement, sans engagement imposé, dans le respect de votre cheminement.",
+      "Não, o coaching baseia-se numa relação livre e respeitosa. O processo ajusta-se ao seu caminho e é construído sessão a sessão, sem compromissos rígidos ou imposições. O foco está sempre no seu crescimento e bem-estar.",
   },
   {
-    question: "Le coaching peut-il se faire à distance ?",
+    question: "O coaching pode ser feito à distância?",
     answer:
-      "Oui. Les séances peuvent avoir lieu par téléphone ou en visio, avec la même qualité de présence, d’écoute et de guidance qu’en cabinet.",
+      "Sim, o coaching pode ser realizado à distância, seja por telefone ou vídeo. Este formato assegura a mesma qualidade de presença, escuta e orientação que numa sessão presencial, permitindo que o trabalho aconteça onde quer que esteja.",
   },
   {
-    question: "Les échanges sont-ils confidentiels ?",
+    question: "Os encontros são confidenciais?",
     answer:
-      "Absolument. Le coaching exclusif repose sur une relation de confiance. Tous les échanges sont strictement confidentiels et respectent pleinement votre vie privée.",
+      "Sim, absolutamente. O coaching exclusivo baseia-se numa relação de confiança profunda. Todas as sessões são estritamente confidenciais, garantindo a total proteção da sua privacidade e do espaço seguro necessário para o seu crescimento.",
   },
 ];
 
@@ -55,7 +55,7 @@ export function CoachingFAQ() {
       <div className="max-w-[900px] mx-auto px-6">
         {/* Title */}
         <h2 className="font-title text-[48px] leading-[1] md:leading-[1.5] md:text-[64px] text-center mb-6 md:mb-10">
-          Avant votre accompagnement
+          Antes do seu acompanhamento
         </h2>
 
         {/* Accordion */}

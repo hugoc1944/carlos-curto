@@ -31,10 +31,10 @@ export function CountryCard({
         {description}
       </CardDescription>
 
-      {/* Spacer to align bottoms */}
+      {/* Espaçador para alinhar em baixo */}
       <div className="flex-1" />
 
-      {/* Domain */}
+      {/* Domínio */}
       <div className="flex items-center gap-2 text-[#6B6B6B] mb-6 mt-3">
         <span className="bg-goldenLinear bg-clip-text text-transparent text-[20px] leading-[1]">
           ✦
@@ -44,12 +44,12 @@ export function CountryCard({
         </span>
       </div>
 
-      {/* External link button */}
+      {/* Botão de link externo */}
       <a
         href={`https://${domain}`}
         target="_blank"
         rel="noopener noreferrer"
-        aria-label={`Ouvrir le site ${domain} dans un nouvel onglet`}
+        aria-label={`Abrir o site ${domain} numa nova aba`}
         className="block"
       >
         <Button
@@ -58,7 +58,7 @@ export function CountryCard({
           className="w-full text-[16px] tracking-[0.08em]"
         >
           <span className="flex items-center justify-center gap-2">
-            Accéder au site
+            Visite o site
             <span
               className="
                 text-[14px]

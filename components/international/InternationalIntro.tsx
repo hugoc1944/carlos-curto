@@ -17,9 +17,7 @@ export function InternationalIntro() {
             leading-[1.2]
           "
         >
-          Les accompagnements internationaux s’inscrivent dans le même cadre
-          confidentiel et personnalisé, à distance ou lors de déplacements
-          ponctuels, selon les lieux et les périodes.
+          Os acompanhamentos internacionais seguem o mesmo propósito confidencial e personalizado, permitindo uma conexão profunda e transformadora. São realizados à distância ou através de deslocações pontuais, conforme as necessidades e os momentos específicos de cada local e situação.
         </p>
       </div>
     </section>

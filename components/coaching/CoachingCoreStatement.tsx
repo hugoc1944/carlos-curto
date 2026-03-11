@@ -30,10 +30,8 @@ export function CoachingCoreStatement() {
               text-transparent
             "
           >
-            C’est le cœur du travail de Charles
-          </span>
-          , qu’il mène auprès de certains clients avec une présence
-          régulière depuis plus de 30 ans.
+            Este é o cerne do trabalho de Carlos Curto</span>
+           , realizado com dedicação constante e profunda ao longo de mais de 40 anos de acompanhamento.
         </p>
       </div>
 

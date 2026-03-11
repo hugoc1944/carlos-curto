@@ -8,7 +8,7 @@ interface ContactStepProps {
     lastName?: string;
     email?: string;
     phone?: string;
-    location?: "paris" | "nice" | "other";
+    location?: "lisboa" | "porto" | "other";
   };
   onUpdate: (data: Partial<ContactStepProps["data"]>) => void;
   onNext: () => void;
@@ -31,82 +31,102 @@ export function ContactStep({
       {/* Title */}
       <div className="space-y-2">
         <h2 className="font-title text-[28px] text-[#1F2E5A]">
-          Vos coordonnées
+          As suas informações de contacto
         </h2>
+
         <p className="font-body text-[15px] text-[#6B6B6B]">
-          Ces informations nous permettent de vous recontacter
-          afin de confirmer votre consultation.
+          Estas informações permitem-nos entrar em contacto consigo e confirmar
+          a sua consulta, garantindo um acompanhamento claro e personalizado.
         </p>
       </div>
 
       {/* Fields */}
       <div className="space-y-5">
+
         <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
           <Field
-            label="Prénom"
+            label="Primeiro nome"
+            name="given-name"
+            autoComplete="given-name"
             value={data.firstName || ""}
             onChange={(v) => onUpdate({ firstName: v })}
           />
+
           <Field
-            label="Nom"
+            label="Apelido"
+            name="family-name"
+            autoComplete="family-name"
             value={data.lastName || ""}
             onChange={(v) => onUpdate({ lastName: v })}
           />
         </div>
 
         <Field
-          label="Adresse e-mail"
+          label="Endereço de e-mail"
           type="email"
+          name="email"
+          autoComplete="email"
           value={data.email || ""}
           onChange={(v) => onUpdate({ email: v })}
         />
-        <div className="space-y-1">
-        <label className="font-body text-[14px] text-[#5F5B52]">
-            Lieu de consultation souhaité
-        </label>
 
-        <select
+        {/* Location */}
+        <div className="space-y-1">
+          <label className="font-body text-[14px] text-[#5F5B52]">
+            Local pretendido para a consulta
+          </label>
+
+          <select
+            name="address-level2"
+            autoComplete="address-level2"
             value={data.location || ""}
             onChange={(e) =>
-            onUpdate({
-                location: e.target.value as "paris" | "nice" | "other",
-            })
+              onUpdate({
+                location: e.target.value as "lisboa" | "porto" | "other",
+              })
             }
             className="
-            w-full
-            rounded-[14px]
-            px-4
-            py-3
-            bg-white
-            border
-            border-[#E5E2DA]
-            focus:outline-none
-            focus:border-[#C7A36A]
-            text-[#1F2E5A]
+              w-full
+              rounded-[14px]
+              px-4
+              py-3
+              bg-white
+              border
+              border-[#E5E2DA]
+              focus:outline-none
+              focus:border-[#C7A36A]
+              text-[#1F2E5A]
             "
-        >
+          >
             <option value="" disabled>
-            Sélectionnez une option
+              Escolha uma opção
             </option>
-            <option value="paris">Paris</option>
-            <option value="nice">Nice</option>
-            <option value="other">Autre ville / À distance</option>
-        </select>
 
-        <p className="font-body text-[13px] text-[#8F8A7E]">
-            Les consultations en cabinet sont disponibles uniquement à Paris et Nice.
-        </p>
+            <option value="lisboa">Lisboa</option>
+            <option value="porto">Porto</option>
+            <option value="other">Outra região / telefone</option>
+          </select>
+
+          <p className="font-body text-[13px] text-[#8F8A7E]">
+            As consultas presenciais estão disponíveis apenas em Lisboa e no
+            Porto. Para outras regiões poderá optar por consulta por telefone.
+          </p>
         </div>
 
+        {/* Phone */}
         <div className="space-y-1">
           <Field
-            label="Téléphone"
+            label="Telefone"
             type="tel"
+            name="tel"
+            autoComplete="tel"
             value={data.phone || ""}
             onChange={(v) => onUpdate({ phone: v })}
           />
+
           <p className="font-body text-[13px] text-[#8F8A7E]">
-            Nous vous contacterons à ce numéro pour confirmer la consultation.
+            Utilizaremos este número apenas para confirmar a sua consulta e
+            garantir uma comunicação simples e direta consigo.
           </p>
         </div>
       </div>
@@ -120,15 +140,16 @@ export function ContactStep({
           disabled={!isValid}
           onClick={onNext}
         >
-          Continuer
+          Continuar
         </Button>
       </div>
     </div>
   );
 }
 
+
 /* -------------------------------------------------------
-   Field component (internal, controlled, elegant)
+   Field component
 ------------------------------------------------------- */
 
 function Field({
@@ -136,19 +157,26 @@ function Field({
   value,
   onChange,
   type = "text",
+  name,
+  autoComplete,
 }: {
   label: string;
   value: string;
   onChange: (value: string) => void;
   type?: string;
+  name?: string;
+  autoComplete?: string;
 }) {
   return (
     <div className="space-y-1">
       <label className="font-body text-[14px] text-[#5F5B52]">
         {label}
       </label>
+
       <input
         type={type}
+        name={name}
+        autoComplete={autoComplete}
         value={value}
         onChange={(e) => onChange(e.target.value)}
         className="

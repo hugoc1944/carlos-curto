@@ -54,14 +54,14 @@ export function CookieConsentBanner() {
       >
         {/* Title */}
         <h2 className="font-title text-[22px] text-[#1F2E5A] leading-[1.3]">
-          Respect de votre confidentialité
+          Respeitamos a sua privacidade
         </h2>
 
         {/* Text */}
         <p className="mt-3 font-body text-[14.5px] leading-[1.65] text-[#2A2A2A]">
-          Ce site utilise des cookies pour mesurer l’audience et améliorer
-          l’expérience proposée. Vous pouvez accepter, refuser ou personnaliser
-          votre choix à tout moment.
+          Este website utiliza cookies para melhorar a sua experiência e compreender
+          de que forma é utilizado. Pode aceitar, recusar ou personalizar as suas
+          preferências a qualquer momento.
         </p>
 
         {/* Actions */}
@@ -82,7 +82,7 @@ export function CookieConsentBanner() {
                 active:opacity-85
               "
             >
-              Accepter
+              Aceitar todos
             </button>
 
             <button
@@ -99,7 +99,7 @@ export function CookieConsentBanner() {
                 hover:bg-[#F3F1EC]
               "
             >
-              Refuser
+              Recusar
             </button>
 
             <button
@@ -113,7 +113,7 @@ export function CookieConsentBanner() {
                 hover:opacity-80
               "
             >
-              Personnaliser
+              Personalizar preferências
             </button>
           </div>
         ) : (
@@ -128,7 +128,7 @@ export function CookieConsentBanner() {
                 className="mt-[3px]"
               />
               <span>
-                Cookies de mesure d’audience (Google Analytics)
+                Cookies para medição de audiência (Google Analytics)
               </span>
             </label>
 
@@ -142,7 +142,7 @@ export function CookieConsentBanner() {
                 className="mt-[3px]"
               />
               <span>
-                Cookies marketing (Meta / Facebook / Instagram)
+                Cookies para fins de marketing (Meta / Facebook / Instagram)
               </span>
             </label>
 
@@ -160,7 +160,7 @@ export function CookieConsentBanner() {
                 hover:opacity-90
               "
             >
-              Enregistrer mes choix
+              Guardar preferências
             </button>
           </div>
         )}

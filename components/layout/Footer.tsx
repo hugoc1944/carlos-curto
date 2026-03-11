@@ -5,78 +5,78 @@ import { VeilLink } from "@/components/navigation/VeilLink";
 export default function Footer() {
   return (
     <footer className="relative z-[10]">
-      {/* MAIN FOOTER */}
+      {/* RODAPÉ PRINCIPAL */}
       <section className="bg-[#F3F1EC]">
         <div className="mx-auto max-w-[1100px] px-6 py-16">
-          {/* Logo */}
+          {/* Logótipo */}
           <div className="mb-12 text-center">
             <p className="font-brand text-[56px] md:text-[60px] text-[#1F2E5A] leading-none">
-              Charles Curto
+              Carlos Curto
             </p>
             <p className="mt-3 text-[13px] tracking-[0.4em] uppercase text-[#1F2E5A]/90">
-              Thérapeute · Harmonisation · Accompagnement
+              Terapeuta · Harmonização · Acompanhamento
             </p>
           </div>
 
-          {/* Content */}
+          {/* Conteúdo */}
           <div className="grid gap-12 md:grid-cols-[1.6fr_1.2fr]">
-            {/* LEFT — NAV GROUPS */}
+            {/* ESQUERDA — GRUPOS DE NAVEGAÇÃO */}
             <div className="grid gap-10 sm:grid-cols-2">
-              <FooterGroup title="Navigation">
-                <FooterLink href="/">Accueil</FooterLink>
-                <FooterLink href="/international">International</FooterLink>
-                <FooterLink href="/ecrits">Écrits</FooterLink>
-                <FooterLink href="/contact">Contact</FooterLink>
+              <FooterGroup title="Navegação">
+                <FooterLink href="/">Início</FooterLink>
+                <FooterLink href="/internacional">Internacional</FooterLink>
+                <FooterLink href="/reflexoes">Reflexoes</FooterLink>
+                <FooterLink href="/contacto">Contacto</FooterLink>
               </FooterGroup>
 
-              <FooterGroup title="Consultations">
-                <FooterLink href="/consultations">
-                  Consultations privées
+              <FooterGroup title="Consultas">
+                <FooterLink href="/consultas">
+                  Consultas Privadas
                 </FooterLink>
                 <FooterLink href="/coaching">
-                  Coaching exclusif
+                  Coaching Exclusivo
                 </FooterLink>
-                <FooterLink href="/consultations#consultations-modalites">
-                  Urgence
-                </FooterLink>
-              </FooterGroup>
-
-              <FooterGroup title="À propos">
-                <FooterLink href="/#home-a-propos">
-                  Qui suis-je
+                <FooterLink href="/consultas#consultas-modalidades">
+                  Urgência
                 </FooterLink>
               </FooterGroup>
 
-              <FooterGroup title="Légal">
-                <FooterLink href="/politique-de-confidentialite">
-                  Politique de confidentialité
+              <FooterGroup title="Sobre Mim">
+                <FooterLink href="/#sobre-carlos-curto">
+                  Quem Sou
                 </FooterLink>
-                <FooterLink href="/politique-des-cookies">
-                  Politique des cookies
+              </FooterGroup>
+
+              <FooterGroup title="Legal">
+                <FooterLink href="/politica-de-privacidade">
+                  Política de Privacidade
+                </FooterLink>
+                <FooterLink href="/politica-de-cookies">
+                  Política de Cookies
                 </FooterLink>
                 <FooterLink
-                    onClick={() => {
+                  onClick={() => {
                     localStorage.removeItem("cc_cookie_consent");
                     location.reload();
-                    }}
+                  }}
                 >
-                    Gestion des cookies
+                  Gestão de Cookies
                 </FooterLink>
               </FooterGroup>
             </div>
 
-            {/* RIGHT — QUOTE & CTA */}
+            {/* DIREITA — CITAÇÃO & CTA */}
             <div className="flex flex-col justify-start">
               <p className="font-title text-[36px] md:text-[40px] leading-[1.2] text-[#1F2E5A]">
-                La paix intérieure
+                A paz interior
                 <br />
-                ouvre toujours la juste
+                abre sempre o caminho
                 <br />
-                direction.
+                certo.
               </p>
 
               <VeilLink
-                href="/contact"
+                href="/contacto"
                 className="
                   mt-6
                   inline-flex
@@ -99,17 +99,17 @@ export default function Footer() {
                   active:opacity-85
                 "
               >
-                Une question ? Prendre contact
+                Tem uma pergunta? Entre em contacto
               </VeilLink>
             </div>
           </div>
         </div>
       </section>
 
-      {/* SEPARATOR */}
+      {/* SEPARADOR */}
       <div className="h-[2px] bg-white shadow-[0_2px_5.1px_rgba(0,0,0,0.05)]" />
 
-      {/* SOCIALS */}
+      {/* REDES SOCIAIS */}
       <section className="bg-[#F3F1EC]">
         <div className="mx-auto max-w-[1100px] px-6 py-16 flex flex-col gap-10 md:flex-row md:items-center md:justify-between">
           <p
@@ -124,9 +124,9 @@ export default function Footer() {
               text-left
             "
           >
-            Les <span className="font-semibold">seuls réseaux officiels</span>
+            As <span className="font-semibold">únicas redes oficiais</span>
             <br />
-            où vous pouvez me retrouver
+            onde pode encontrar-me
           </p>
 
           <div className="flex items-center gap-8">
@@ -147,14 +147,14 @@ export default function Footer() {
         </div>
       </section>
 
-      {/* SEPARATOR */}
+      {/* SEPARADOR */}
       <div className="h-[2px] bg-white shadow-[0_2px_5.1px_rgba(0,0,0,0.05)]" />
 
-      {/* BOTTOM BAR */}
+      {/* BARRA INFERIOR */}
       <section className="bg-[#1F2E5A]">
         <div className="mx-auto max-w-[1100px] px-6 py-4">
           <p className="text-center text-[15px] tracking-wide text-white/80">
-            © 2026 Charles Curto. Tous droits réservés – Conception :{" "}
+            © 2026 Carlos Curto. Todos os direitos reservados – Concepção:{" "}
             <a
               href="https://webtogo.pt"
               target="_blank"
@@ -175,7 +175,7 @@ export default function Footer() {
   );
 }
 
-/* ---------- Subcomponents ---------- */
+/* ---------- Subcomponentes ---------- */
 
 function FooterGroup({
   title,
@@ -267,7 +267,7 @@ function SocialLink({
   );
 }
 
-/* ---------- Icons ---------- */
+/* ---------- Ícones ---------- */
 
 function InstagramIcon() {
   return (

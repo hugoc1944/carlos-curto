@@ -18,7 +18,7 @@ export function CoachingStatement() {
           text-center
           scroll-mt-20
         "
-        id="comprendre-coaching"
+        id="saber-mais-coaching"
       >
         <p
           className="
@@ -31,9 +31,7 @@ export function CoachingStatement() {
             tracking-[0]
           "
         >
-          Chaque accompagnement débute par une première séance,
-          puis se construit dans le temps, selon vos besoins,
-          vos périodes et votre rythme.
+          Cada acompanhamento começa com uma primeira sessão, um momento de conexão e descoberta. A partir daí, o processo é construído com cuidado, respeitando as suas necessidades, o seu tempo interior e o ritmo único da sua jornada.
         </p>
       </div>
     </section>

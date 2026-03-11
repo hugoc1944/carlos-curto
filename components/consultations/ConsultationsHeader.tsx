@@ -37,9 +37,9 @@ export function ConsultationsHeader() {
             md:text-[80px]
           "
         >
-          Consultations
+          Consultas
           <br />
-          Privées
+          Privadas
         </h1>
 
         {/* ================= SUBTITLE ================= */}
@@ -55,8 +55,8 @@ export function ConsultationsHeader() {
             pt-10
           "
         >
-          Éclairez une situation essentielle lors d’un échange
-          confidentiel d’une heure.
+          Encontre clareza em questões essenciais através de uma troca
+          confidencial e transformadora de uma hora.
         </p>
 
         {/* ================= TRUST PILLS ================= */}
@@ -71,10 +71,10 @@ export function ConsultationsHeader() {
             md:pt-5
           "
         >
-          <TrustPill>Une pratique reconnue</TrustPill>
-          <TrustPill>40+ ans d’expérience</TrustPill>
-          <TrustPill>Guidance confidentielle</TrustPill>
-          <TrustPill>Paris · Nice</TrustPill>
+          <TrustPill>Uma prática amplamente reconhecida</TrustPill>
+          <TrustPill>Mais de 40 anos de sabedoria e experiência</TrustPill>
+          <TrustPill>Orientação segura e confidencial</TrustPill>
+          <TrustPill>Lisboa · Portugal</TrustPill>
         </div>
       </div>
     </section>

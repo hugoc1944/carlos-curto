@@ -7,37 +7,37 @@ import Link from "next/link";
 
 export function HomePrivateConsultationCard() {
   return (
-  <CardElement className="p-6 pt-8 md:p-8 pb-5 flex flex-col">
-    <div className="flex items-center gap-2">
+    <CardElement className="p-6 pt-8 md:p-8 pb-5 flex flex-col">
+      <div className="flex items-center gap-2">
         <StarBadge />
 
         <h3 className="font-title text-[36px] leading-[1] md:leading-[1.5] font-semibold text-text">
-            Consultations privées
+          Consultas Privadas
         </h3>
-    </div>
+      </div>
 
       <p className="font-body text-[21px] mt-3 md:mt-0 leading-[1.6] text-[#6B6B6B]">
-        Téléphone · Cabinet Paris / Nice
+        Telefone · Escritório Lisboa / Porto
       </p>
 
       <p className="font-body text-[21px] leading-[1.7] text-text">
-        Une séance d’une heure pour éclaircir une question essentielle 
-        et recevoir une guidance directe. Idéal pour apaiser les tensions 
-        familiales, clarifier un chemin ou dissiper ce qui vous pèse.
+        Uma oportunidade única para alcançar clareza e harmonia numa sessão de uma hora. 
+        Focada em resolver uma preocupação essencial, aliviar tensões familiares ou 
+        iluminar o caminho diante de desafios. Permita-se encontrar a paz e as respostas que merece.
       </p>
 
       <div className="flex flex-col gap-3 mt-auto pt-8">
         {/* Buttons (aligned) */}
         <div className="flex flex-col gap-3">
-          <Link href="/consultations" className="inline-block">
+          <Link href="/consultas" className="inline-block">
             <Button variant="primary" className="w-full text-[19px]">
-               Découvrir la consultation
+              Descubra a consulta
             </Button>
           </Link>
           
-          <Link href="/consultations#consultations-modalites">
+          <Link href="/consultas#consultas-modalidades">
             <Button variant="soft" className="w-full text-[19px]">
-              Modalités
+              Modalidades
             </Button>
           </Link>
         </div>

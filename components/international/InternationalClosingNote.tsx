@@ -1,6 +1,7 @@
 "use client";
 
 import { Button } from "@/components/ui/Button";
+import Link from "next/link";
 
 export function InternationalClosingNote() {
   return (
@@ -23,16 +24,20 @@ export function InternationalClosingNote() {
             text-left
           "
         >
-          Si votre situation ne correspond pas à un pays précis, ou si vous
-          résidez ailleurs, les consultations restent possibles à distance,
-          dans le même cadre confidentiel et attentif. Chaque demande est
-          étudiée avec soin, selon les périodes et les disponibilités.
+          Se a sua situação não se enquadrar num país específico ou se 
+          residir noutro local, as consultas continuam possíveis à distância. 
+          Este formato garante o mesmo cuidado, atenção e confidencialidade 
+          que merece. Cada pedido será analisado com profunda dedicação 
+          e respeito, sempre considerando os horários e a disponibilidade 
+          para melhor o atender.
         </p>
 
         <div className="mt-7 md:mt-10">
-          <Button variant="softFilled" size="md" className="text-[18px]">
-            Une question avant de réserver&nbsp;?
-          </Button>
+          <Link href="/contacto">
+            <Button variant="softFilled" size="md" className="text-[18px]">
+              Uma questão antes de reservar&nbsp;?
+            </Button>
+          </Link>
         </div>
       </div>
     </section>

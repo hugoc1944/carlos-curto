@@ -1,5 +1,6 @@
 // bookingModes.ts
-export type BookingMode = "presential" | "phone" | "visio";
+
+export type BookingMode = "presential" | "phone";
 
 export const BOOKING_MODES: {
   id: BookingMode;
@@ -10,21 +11,15 @@ export const BOOKING_MODES: {
 }[] = [
   {
     id: "presential",
-    label: "Présentiel",
-    description: "Cabinet — Paris ou Nice",
-    available: false,
-    note: "Disponible uniquement à Paris et Nice",
+    label: "Consulta presencial",
+    description: "Consulta no consultório em Lisboa ou no Porto",
+    available: true,
+    note: "Disponível apenas em Lisboa ou no Porto",
   },
   {
     id: "phone",
-    label: "Téléphone",
-    description: "Échange confidentiel par appel",
-    available: true,
-  },
-  {
-    id: "visio",
-    label: "Visio",
-    description: "Consultation à distance",
+    label: "Consulta por telefone",
+    description: "Troca confidencial realizada por chamada",
     available: true,
   },
 ];

@@ -27,7 +27,7 @@ export function BookingModal() {
           />
 
           {/* Modal */}
-            <m.div
+          <m.div
             className="
                 relative
                 z-10
@@ -49,10 +49,10 @@ export function BookingModal() {
             animate={{ y: 0, opacity: 1 }}
             exit={{ y: 16, opacity: 0 }}
             transition={{
-                duration: motionTokens.duration.base,
-                ease: motionTokens.ease.calm,
+              duration: motionTokens.duration.base,
+              ease: motionTokens.ease.calm,
             }}
-            >
+          >
             {/* Close */}
             <button
               onClick={closeBooking}
@@ -74,26 +74,24 @@ export function BookingModal() {
             {/* Header */}
             <div className="mb-4 md:mb-3">
               <p className="font-body text-[13px] tracking-[0.28em] uppercase text-[#8F8A7E] mb-2">
-                Demande de réservation
+                Pedido de Marcação
               </p>
 
               <h2 className="font-title text-[#1F2E5A] text-[26px] md:text-[34px] leading-[1.1]">
-                {serviceType === "classic" && "Consultation privée"}
-                {serviceType === "signature" && "Séance Signature"}
-                {serviceType === "urgent" && "Demande urgente"}
+                {serviceType === "classic" && "Consulta Privada"}
+                {serviceType === "signature" && "Sessão Signature"}
+                {serviceType === "urgent" && "Pedido Urgente"}
               </h2>
 
               <p className="mt-2 md:mt-3 font-body text-[15px] md:text-[17px] leading-[1.6] text-[#5F5B52]">
-                Votre demande sera transmise au secrétariat.  
-                Vous serez recontacté(e) par téléphone afin de confirmer
-                les modalités.
-              </p>
+                O seu pedido será recebido com toda a atenção pela nossa Secretaria. 
+                Entraremos em contacto consigo por telefone para confirmar os detalhes da consulta e assegurar o melhor acompanhamento possível.              </p>
             </div>
 
             <BookingFlow
-            serviceType={serviceType!}
-            onClose={closeBooking}
-            />          
+              serviceType={serviceType!}
+              onClose={closeBooking}
+            />
           </m.div>
         </m.div>
       )}

@@ -23,14 +23,14 @@ export function RelatedEcrits({ items }: RelatedEcritsProps) {
           mb-10
         "
       >
-        Lire aussi
+        Ler Também
       </p>
 
       <div className="space-y-12">
         {items.map((item) => (
           <Link
             key={item.slug}
-            href={`/ecrits/${item.slug}`}
+            href={`/reflexoes/${item.slug}`}
             className="group block"
           >
             <h3
@@ -57,7 +57,7 @@ export function RelatedEcrits({ items }: RelatedEcritsProps) {
                 text-[#9A9A9A]
               "
             >
-              Lecture {item.readingTime}
+              Leitura de {item.readingTime}
             </p>
           </Link>
         ))}

@@ -12,7 +12,7 @@ import { PageTransition } from "@/components/layout/PageTransition";
 import { HomeHeroBanner } from "@/components/home/HomeHeroBanner";
 import { HomeHeroMessage } from "@/components/home/HomeHeroMessage";
 import { HomeAncestralHealing } from "@/components/home/HomeAncestralHealing";
-import { HomeAboutCharles } from "@/components/home/HomeAboutCharles";
+import { HomeAboutCarlos } from "@/components/home/HomeAboutCharles";
 import { HomeQuoteBand } from "@/components/home/HomeQuoteBand";
 import { HomeConsultationsSection } from "@/components/home/HomeConsultationsSection";
 import { HomeAuthoritySection } from "@/components/home/HomeAuthoritySection";
@@ -43,7 +43,7 @@ export default function HomeClient() {
 
           <PageSection>
             <HomeAncestralHealing />
-            <HomeAboutCharles anchorId="home-a-propos"/>
+            <HomeAboutCarlos anchorId="sobre-carlos-curto"/>
           </PageSection>
         </PageContainer>
 

@@ -35,9 +35,9 @@ export function CoachingHeader() {
             md:text-[80px]
           "
         >
-          Coaching Privé
+          Coaching Privado
           <br />
-          Exclusif
+          Exclusivo
         </h1>
 
         {/* ================= SUBTITLE ================= */}
@@ -54,10 +54,10 @@ export function CoachingHeader() {
           "
         >
           <span className="text-[#C7A36A]">
-            Un accompagnement dans la durée
+            Um guia profundo e transformador ao longo do tempo
           </span>
-          , pour traverser les étapes essentielles de votre vie
-          avec clarté et soutien.
+          , para atravessar as jornadas essenciais da sua vida com
+          clareza, confiança e um apoio verdadeiramente presente.
         </p>
 
         {/* ================= TRUST PILLS ================= */}
@@ -72,12 +72,12 @@ export function CoachingHeader() {
             md:pt-5
           "
         >
-          <TrustPill>Accompagnement dans la durée</TrustPill>
-          <TrustPill>40+ ans d’expérience</TrustPill>
-          <TrustPill>Relation de confiance</TrustPill>
-          <TrustPill>Présence continue</TrustPill>
-          <TrustPill>Coaching individuel</TrustPill>
-          <TrustPill>Paris · Nice</TrustPill>
+          <TrustPill>Apoio contínuo e dedicado</TrustPill>
+          <TrustPill>Mais de 40 anos de sabedoria e experiência</TrustPill>
+          <TrustPill>Construção de uma relação de confiança</TrustPill>
+          <TrustPill>Presença verdadeira em cada momento</TrustPill>
+          <TrustPill>Transformação através do coaching individual</TrustPill>
+          <TrustPill>Disponível em Lisboa · Porto</TrustPill>
         </div>
       </div>
     </section>

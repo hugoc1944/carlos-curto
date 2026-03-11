@@ -6,7 +6,6 @@ import { motion } from "@/styles/motion";
 import { useState } from "react";
 import { usePathname } from "next/navigation";
 
-
 type NavMode = "root" | "ecrits";
 
 export function NavigationMenu() {
@@ -16,62 +15,62 @@ export function NavigationMenu() {
 
   const items = [
     {
-      title: "CONSULTATIONS",
-      description: "Éclairer une situation\nessentielle",
-      href: "/consultations",
+      title: "CONSULTAS",
+      description: "Aprofunde questões essenciais de forma esclarecedora.",
+      href: "/consultas",
     },
     {
-      title: "COACHING EXCLUSIF",
-      description: "Un accompagnement\ndans la durée",
+      title: "COACHING EXCLUSIVO",
+      description: "Um acompanhamento contínuo e transformador.",
       href: "/coaching",
     },
     {
-      eyebrow: "AU-DELÀ DES FRONTIÈRES",
-      title: "INTERNATIONAL",
-      description: "Consultations à distance ·\nFrance & international",
-      href: "/international",
+      eyebrow: "ALÉM-FRONTEIRAS",
+      title: "INTERNACIONAL",
+      description: "Consultas à distância · Portugal e além-fronteiras.",
+      href: "/internacional",
     },
     {
-      title: "ÉCRITS & CONTACT",
-      description: "Articles, ressources\n& échanges",
+      title: "REFLEXÕES & CONTACTO",
+      description: "Escritos, recursos e partilhas.",
       action: () => setNavMode("ecrits"),
     },
   ];
 
   const subItems = [
     {
-      title: "ÉCRITS",
-      description: "Articles, ressources\n& réflexions",
-      href: "/ecrits",
+      title: "REFLEXÕES",
+      description: "Reflexões e recursos para a jornada interior.",
+      href: "/reflexoes",
     },
     {
-      title: "CONTACT",
-      description: "Entrer en relation\n& échanges",
-      href: "/contact",
+      title: "CONTACTO",
+      description: "Entre em contacto e partilhe as suas intenções.",
+      href: "/contacto",
     },
   ];
 
-  /** Renders ONLY the inner content (no <li>) */
+  /** Renderiza APENAS o conteúdo interior (sem <li>) */
   const ItemContent = (item: any) => (
     <button
       onClick={() => {
-      if (item.action) {
-        item.action();
-        return;
-      }
+        if (item.action) {
+          item.action();
+          return;
+        }
 
-      // Same route → just close the nav
-      if (item.href === pathname) {
-        close();
-        return;
-      }
+        // Mesma rota → apenas fecha a navegação
+        if (item.href === pathname) {
+          close();
+          return;
+        }
 
-      // Different route → normal navigation with veil
-      navigateTo(item.href);
-    }}
+        // Rota diferente → navegação normal com véu
+        navigateTo(item.href);
+      }}
       className="relative w-full text-left cursor-pointer"
     >
-      {/* Hover background */}
+      {/* Fundo hover */}
       <m.div
         variants={{
           rest: { opacity: 0 },
@@ -92,7 +91,7 @@ export function NavigationMenu() {
         "
       />
 
-      {/* Content */}
+      {/* Conteúdo */}
       <div className="relative z-10">
         {item.eyebrow && (
           <m.div
@@ -112,8 +111,7 @@ export function NavigationMenu() {
           </m.div>
         )}
 
-        <div className="flex flex-col md:flex-row md:items-center">
-          <m.h2
+        <div className="flex flex-col md:flex-row md:items-center md:gap-8">          <m.h2
             variants={{
               rest: { color: "#ffffff" },
               hover: { color: "#1E3EC9" },
@@ -124,6 +122,7 @@ export function NavigationMenu() {
               text-[36px] md:text-[64px]
               leading-[0.9] md:leading-[0.82]
               tracking-wide
+              md:flex-[0_0_auto]
             "
           >
             {item.title}
@@ -138,12 +137,12 @@ export function NavigationMenu() {
             className="
               mt-2
               md:mt-0
-              md:ml-4
+              md:ml-0
               font-title
               text-[17px] md:text-[20px]
               leading-[1.1] md:leading-[1]
               whitespace-normal md:whitespace-pre-line
-              max-w-md
+              max-w-[420px]
             "
           >
             {item.description}
@@ -169,22 +168,21 @@ export function NavigationMenu() {
             }}
           >
             {items.map((item) => (
-            <m.li
-              key={item.title}
-              initial="rest"
-              animate="rest"
-              whileHover="hover"
-              whileTap="hover"
-              transition={{
-                duration: motion.duration.slow,
-                ease: motion.ease.calm,
-              }}
-              className="relative"
-            >
-              {ItemContent(item)}
-            </m.li>
-          ))}
-
+              <m.li
+                key={item.title}
+                initial="rest"
+                animate="rest"
+                whileHover="hover"
+                whileTap="hover"
+                transition={{
+                  duration: motion.duration.slow,
+                  ease: motion.ease.calm,
+                }}
+                className="relative"
+              >
+                {ItemContent(item)}
+              </m.li>
+            ))}
           </m.ul>
         )}
 
@@ -200,7 +198,7 @@ export function NavigationMenu() {
               ease: motion.ease.calm,
             }}
           >
-            {/* Retour */}
+            {/* Voltar */}
             <m.li
               initial={{ opacity: 0, y: -8 }}
               animate={{ opacity: 1, y: 0 }}
@@ -214,7 +212,7 @@ export function NavigationMenu() {
                 onClick={() => setNavMode("root")}
                 className="font-title text-[#ffffff] text-[20px] cursor-pointer"
               >
-                ← RETOUR
+                ← VOLTAR
               </button>
             </m.li>
 

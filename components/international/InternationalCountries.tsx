@@ -5,7 +5,7 @@ import { CountryCard } from "@/components/cards/CountryCard";
 export function InternationalCountries() {
   return (
     <section className="w-full pb-20 md:pb-32">
-      {/* Guide line + label */}
+      {/* Guide line and label */}
       <div className="relative max-w-[1100px] mx-auto my-8 h-[160px]">
         {/* Vertical line */}
         <div
@@ -36,7 +36,7 @@ export function InternationalCountries() {
             leading-[1]
           "
         >
-          Accédez aux espaces <br/>internationaux
+          Aceda aos espaços <br /> internacionais
         </span>
       </div>
 
@@ -53,24 +53,24 @@ export function InternationalCountries() {
         "
       >
         <CountryCard
-          country="FRANCE"
-          title="Cabinet principal"
-          description="Consultations privées et accompagnement exclusif proposés depuis le cabinet principal."
+          country="FRANÇA"
+          title="Acompanhamento Paris & Nice"
+          description="Consultas privadas e acompanhamento exclusivo em França."
           domain="charlescurto.fr"
         />
 
         <CountryCard
           country="PORTUGAL"
-          title="Espace dédié"
-          description="Un espace dédié aux consultations et accompagnements à destination du public portugais."
-          domain="charlescurto.pt"
+          title="Espaço Dedicado"
+          description="Espaço exclusivo para consultas e acompanhamento em Portugal."
+          domain="carloscurto.pt"
         />
 
         <CountryCard
-          country="ESPAGNE"
-          title="Présence associée"
-          description="Consultations et accompagnement proposés en lien avec le cabinet principal."
-          domain="charlescurto.es"
+          country="ESPANHA"
+          title="Presença Associada"
+          description="Consultas e acompanhamento disponíveis em Espanha."
+          domain="carloscurto.es"
         />
       </div>
     </section>

@@ -7,9 +7,10 @@ import { motion } from "@/styles/motion";
 /**
  * ReturnHome
  *
- * Secondary navigation action.
- * Allows the user to return to the homepage
- * without scanning the main navigation list.
+ * Ação secundária de navegação.
+ * Permite ao utilizador regressar à página inicial
+ * de forma fluida e intuitiva, sem precisar de recorrer
+ * à navegação principal.
  */
 export function ReturnHome() {
   const { navigateTo } = useNavigation();
@@ -41,8 +42,8 @@ export function ReturnHome() {
         cursor-pointer
       "
     >
-      <span className="italic lowercase">revenir</span>{" "}
-      <span className="uppercase">à ACCUEIL</span>
+      <span className="italic lowercase">regressar</span>{" "}
+      <span className="uppercase">AO INÍCIO</span>
     </m.button>
   );
 }

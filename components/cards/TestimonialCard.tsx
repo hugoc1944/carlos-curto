@@ -30,14 +30,14 @@ export function TestimonialCard({
         className
       )}
     >
-      {/* Stars */}
+      {/* Estrelas */}
       <div className="flex text-accent text-[20px] text-[#D4AF37]">
         {Array.from({ length: stars }).map((_, i) => (
           <span key={i}>★</span>
         ))}
       </div>
 
-      {/* Quote */}
+      {/* Citação */}
       <p
         className="
           font-body
@@ -50,7 +50,7 @@ export function TestimonialCard({
         « {quote} »
       </p>
 
-      {/* Author (optional) */}
+      {/* Autor (opcional) */}
       {author && (
         <span
           className="

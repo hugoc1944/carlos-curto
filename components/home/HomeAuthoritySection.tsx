@@ -15,12 +15,12 @@ export function HomeAuthoritySection() {
           ========================================================== */}
           <div className="text-center space-y-6">
             <h2 className="font-title text-[#1F2E5A] font-semibold text-[42px] md:text-[48px] leading-[1.1]">
-              Charles Curto | Guidance Spirituelle &<br />
-              Accompagnement Énergétique
+              Carlos Curto | Orientação Espiritual &<br />
+              Acompanhamento Energético
             </h2>
 
             <p className="font-body font-light text-[24px] text-[#6B6B6B]">
-              Consultations en France et à l’international – par téléphone ou en cabinet
+              Consultas em Portugal e no estrangeiro – por telefone ou presencialmente
             </p>
           </div>
 
@@ -29,14 +29,13 @@ export function HomeAuthoritySection() {
           ========================================================== */}
           <div className="max-w-[760px] text-left space-y-6">
             <p className="font-body font-light text-[24px] md:text-[26px] leading-[1.6] text-text">
-              Reconnu pour son <span className="font-normal">approche profonde</span> et son{" "}
-              <span className="font-normal">écoute rare</span>, Charles accompagne depuis plus
-              de quarante ans des personnes{" "}
-              <span className="font-normal">en France, en Europe et au-delà</span>.
-              Ses consultations,{" "}
-              <span className="font-normal">par téléphone ou en présentiel à Paris et Nice</span>,
-              offrent une guidance claire, apaisante et directement orientée vers la
-              résolution de vos problématiques essentielles.
+              Reconhecido pela sua <span className="font-normal">profunda sabedoria espiritual </span> 
+              e pela sua <span className="font-normal">escuta acolhedora</span>, Carlos tem
+              acompanhado, há mais de quarenta anos, pessoas de <span className="font-normal">Portugal,
+              Europa e além-fronteiras</span>. As suas consultas, realizadas{" "}
+              <span className="font-normal">por telefone ou presencialmente em Lisboa e no Porto</span>,
+              oferecem uma orientação clara e reconfortante, profundamente direcionada à 
+              <span className="font-normal"> resolução das questões essenciais</span> de cada pessoa.
             </p>
           </div>
 
@@ -45,7 +44,7 @@ export function HomeAuthoritySection() {
           ========================================================== */}
           <Link href="/consultations" className="inline-block">
             <Button variant="authority">
-              Découvrir les consultations
+              Descubra as consultas
             </Button>
           </Link>
         </div>

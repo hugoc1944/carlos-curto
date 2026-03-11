@@ -17,22 +17,21 @@ export function CoachingBooking() {
         {/* Intro */}
         <div className="text-center mt-10 md:mt-15 mb-15 md:mb-20">
           <h2 className="font-title leading-[1] text-[38px] md:text-[72px] text-[#1F2E5A] font-semibold">
-            Réservez votre accompagnement avec Charles Curto
+            Reserve a sua sessão de acompanhamento com Carlos Curto
           </h2>
 
           <p className="font-body text-[18px] font-light md:font-normal md:text-[22px] mt-4 max-w-[90%] md:max-w-[85%] mx-auto">
-            Chaque accompagnement débute par une première séance, qui permet de poser
-            un cadre clair et d’évaluer la justesse d’un travail dans la durée.
+            Cada jornada começa com um primeiro passo. Esta sessão inicial não é apenas um encontro, mas uma oportunidade para criar uma base sólida e explorar a harmonia de um trabalho contínuo. É o momento de alinhar intenções e estabelecer o caminho que irá nutrir o seu crescimento pessoal.
           </p>
         </div>
 
         {/* Overline */}
         <p className="text-center font-body text-[#777] tracking-[0.26em] uppercase text-[14px] md:text-[18px] mb-2">
-          Consultation privée
+          Consulta Privada
         </p>
 
         <h3 className="text-center leading-[1] md:leading-[1.5] font-title text-[32px] text-[#1F2E5A] md:text-[48px] mb-10">
-          Séance Signature
+          Sessão de Signature
         </h3>
 
         {/* Card */}
@@ -52,20 +51,19 @@ export function CoachingBooking() {
           mt-12
           mb-8
         ">
-          Cette première séance est le point de départ de tout accompagnement.
+          Esta primeira sessão marca o início de um processo profundo e transformador, desenhado especialmente para si.
         </p>
 
         {/* Info box */}
         <InfoNotice>
-          Les accompagnements sont volontairement limités afin de préserver une relation
-          de travail attentive, stable et approfondie dans le temps.
+          O número de acompanhamentos é cuidadosamente limitado para assegurar uma relação dedicada, estável e profundamente conectada, permitindo um espaço genuíno para a sua evolução.
         </InfoNotice>
 
         {/* CTAs */}
         <div className="flex flex-col items-center gap-4 mt-10 leading-[1] md:leading-[1.5]">
-          <Link href="/contact" className="inline-block">
+          <Link href="/contacto" className="inline-block">
             <Button variant="softFilled" size="lg">
-              Une question avant de réserver ? Écrivez-nous
+              Tem alguma dúvida antes de reservar? Fale connosco
             </Button>
           </Link>
 
@@ -74,46 +72,45 @@ export function CoachingBooking() {
               target="_blank"
               rel="noopener noreferrer"
               className="inline-block"
-              aria-label="Accéder aux ressources gratuites de Charles Curto sur Instagram"
+              aria-label="Aceda aos recursos gratuitos de Carlos Curto no Instagram"
             >
               <Button variant="authority" size="lg">
-                Ressources gratuites — Instagram
+                Recursos Gratuitos — Instagram
               </Button>
           </a>
         </div>
 
         {/* Testimonials */}
         <h3 className="font-title text-[48px] text-center mt-20 mb-3">
-          Ils témoignent
+          Testemunhos
         </h3>
 
         <div className="grid grid-cols-1 md:grid-cols-3 gap-4 md:gap-6 mb-20">
           <TestimonialCard
-            quote="Un accompagnement qui s’inscrit dans le temps, avec beaucoup de justesse."
+            quote="Um acompanhamento que se desenvolve ao longo do tempo, com enorme precisão e atenção."
             author="Anne S., Paris"
           />
           <TestimonialCard
-            quote="La relation s’est construite progressivement, sans pression ni promesse."
+            quote="A relação foi sendo construída com paciência, criando confiança e clareza sem promessas vazias."
             author="Claire B., Nice"
           />
           <TestimonialCard
-            quote="Une présence stable, qui permet d’avancer sans se disperser."
-            author="Hélène M., Genève"
+            quote="Uma presença estável e serena, que nos guia com foco e sem dispersão."
+            author="Hélène M., Genebra"
           />
           <TestimonialCard
-            quote="Le travail a apporté une cohérence durable, pas un effet ponctuel."
+            quote="Este trabalho trouxe não apenas mudanças, mas uma coerência duradoura no meu caminho."
             author="Sophie L., Lyon"
           />
           <TestimonialCard
-            quote="Une parole mesurée, mais toujours juste dans les moments clés."
+            quote="A palavra certa, no momento certo, transformando pequenos instantes em grandes avanços."
             author="Isabelle R., Madrid"
           />
           <TestimonialCard
-            quote="Une relation de confiance, construite dans le respect du rythme."
-            author="Marion C., Lisbonne"
+            quote="Uma relação de confiança construída no ritmo que eu precisava, sem pressa ou pressão."
+            author="Marion C., Lisboa"
           />
         </div>
-
 
         <SectionSeparator />
 

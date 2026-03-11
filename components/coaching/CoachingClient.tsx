@@ -11,7 +11,7 @@ import { CoachingStatement } from "@/components/coaching/CoachingStatement";
 import { ConsultationsThemes } from "@/components/consultations/ConsultationsThemes";
 import { CoachingCoreStatement } from "@/components/coaching/CoachingCoreStatement";
 import { CoachingBooking } from "@/components/coaching/CoachingBooking";
-import { AboutCharles } from "@/components/consultations/AboutCharles";
+import { AboutCarlos } from "@/components/consultations/AboutCharles";
 import { CoachingFAQ } from "@/components/coaching/CoachingFAQ";
 import { useScrollToHash } from "@/hooks/useScrollToHash";
 
@@ -32,7 +32,7 @@ export default function CoachingClient() {
           <ConsultationsThemes/>
           <CoachingCoreStatement/>
           <CoachingBooking/>
-          <AboutCharles/>
+          <AboutCarlos/>
           <CoachingFAQ/>
         </m.main>
     </PageTransition>
