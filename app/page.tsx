@@ -2,17 +2,16 @@ import type { Metadata } from "next";
 import HomeClient from "@/components/home/HomeClient";
 
 export const metadata: Metadata = {
-  title: "Charles Curto",
+  title: "Carlos Curto | Orientação espiritual e consultas privadas",
   description:
-    "Charles Curto est un accompagnant spirituel indépendant. Son approche repose sur la clarté intérieure, l’écoute profonde et une présence structurante, au service de celles et ceux en recherche de sens.",
+    "Carlos Curto oferece consultas espirituais privadas e acompanhamento individual. Um espaço de escuta profunda, clareza e orientação para momentos importantes da vida.",
 
   openGraph: {
-    title: "Charles Curto",
+    title: "Carlos Curto | Orientação espiritual",
     description:
-      "Présence, clarté intérieure et accompagnement spirituel. Découvrir le parcours et la démarche de Charles Curto.",
+      "Consultas privadas e acompanhamento espiritual com Carlos Curto. Um trabalho de escuta, clareza e orientação para atravessar momentos essenciais da vida.",
   },
 };
-
 
 export default function Page() {
   return <HomeClient />;

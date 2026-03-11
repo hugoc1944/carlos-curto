@@ -41,11 +41,11 @@ export default function EcritsClient({ ecrits }: Props) {
         ========================================================== */}
         <div className="mb-10 md:mb-15">
           <h1 className="font-title text-[#1F2E5A] text-[56px] md:text-[80px] leading-[1] font-semibold md:font-normal">
-            ÉCRITS
+            REFLEXÕES
           </h1>
 
           <p className="mt-6 font-title text-[#1F2E5A] text-[26px] md:text-[40px] leading-[1.1] max-w-[620px]">
-            Articles, ressources & réflexions
+            Escritos, ensinamentos e recursos para iluminar o seu caminho.
           </p>
         </div>
 
@@ -54,12 +54,12 @@ export default function EcritsClient({ ecrits }: Props) {
         ========================================================== */}
         <div className="mb-16 md:hidden">
           <p className="font-body text-[13px] tracking-[0.32em] uppercase text-[#8F8A7E] mb-5">
-            Thématiques
+            Temáticas
           </p>
 
           <div className="flex flex-wrap gap-3">
             <ThemeButton
-              label="Tous"
+              label="Todos"
               active={activeTheme === null}
               onClick={() => setActiveTheme(null)}
             />
@@ -107,7 +107,7 @@ export default function EcritsClient({ ecrits }: Props) {
                   className="group rounded-[18px] "
                 >
                   <VeilLink
-                    href={`/ecrits/${ecrit.slug}`}
+                    href={`/reflexoes/${ecrit.slug}`}
                     className="block py-8 text-left w-full cursor-pointer"
                   >
                     <h2 className="font-title text-[#1F2E5A] text-[30px] md:text-[38px] leading-[1.15] transition-colors duration-500 group-hover:text-[#C7A36A]">
@@ -119,7 +119,7 @@ export default function EcritsClient({ ecrits }: Props) {
                     </p>
 
                     <p className="mt-3 font-body text-[14px] tracking-[0.18em] uppercase text-[#8F8A7E]">
-                      Lecture {ecrit.meta.readingTime}
+                      Leitura {ecrit.meta.readingTime}
                     </p>
                   </VeilLink>
                 </m.div>
@@ -136,12 +136,12 @@ export default function EcritsClient({ ecrits }: Props) {
           {/* RIGHT — THEMES (DESKTOP) */}
           <aside className="hidden md:block md:pt-2">
             <p className="font-body text-[13px] tracking-[0.32em] uppercase text-[#8F8A7E] mb-6">
-              Thématiques
+              Temáticas
             </p>
 
             <div className="flex flex-wrap gap-3">
               <ThemeButton
-                label="Tous"
+                label="Todos"
                 active={activeTheme === null}
                 onClick={() => setActiveTheme(null)}
               />
@@ -161,15 +161,15 @@ export default function EcritsClient({ ecrits }: Props) {
         {/* SOFT CLOSING CTA */}
         <div className="mt-40 text-center">
           <p className="font-body text-[17px] leading-[1.6] text-[#5F5B52] max-w-[420px] mx-auto">
-            Certaines réflexions appellent parfois un échange plus personnel.
+            Algumas reflexões pedem um espaço de partilha mais próximo e significativo.
           </p>
 
           <div className="mt-6">
             <Link
-              href="/consultations"
+              href="/consultas"
               className="inline-block font-body text-[16px] tracking-[0.2em] uppercase text-[#1F2E5A] hover:text-[#C7A36A] transition"
             >
-              Éclairer une situation
+              Agendar uma consulta
             </Link>
           </div>
         </div>

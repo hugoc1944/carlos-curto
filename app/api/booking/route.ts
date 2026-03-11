@@ -4,7 +4,7 @@ import { Resend } from "resend";
 const resend = new Resend(process.env.RESEND_API_KEY);
 
 /* =========================================================
-   Helpers
+Helpers
 ========================================================= */
 
 function isValidEmail(email: string) {
@@ -20,25 +20,24 @@ function escapeHtml(text: string) {
 }
 
 const SERVICE_LABELS: Record<string, string> = {
-  classic: "Consultation classique",
-  signature: "Séance Signature",
-  urgent: "Consultation urgente",
+  classic: "Consulta Clássica",
+  signature: "Sessão Assinatura",
+  urgent: "Consulta Urgente",
 };
 
 const MODE_LABELS: Record<string, string> = {
-  presential: "En cabinet",
-  phone: "Par téléphone",
-  visio: "En visioconférence",
+  presential: "Presencial",
+  phone: "Por telefone",
 };
 
 const TIME_LABELS: Record<string, string> = {
-  morning: "Matin (07h - 12h)",
-  afternoon: "Après-midi (14h - 18h)",
-  night: "Soir (20h - 22h)",
+  morning: "Manhã (07h - 12h)",
+  afternoon: "Tarde (14h - 18h)",
+  night: "Noite (20h - 22h)",
 };
 
 /* =========================================================
-   POST
+POST
 ========================================================= */
 
 export async function POST(req: Request) {
@@ -61,12 +60,10 @@ export async function POST(req: Request) {
 
     /* ---------- Spam protection ---------- */
 
-    // Honeypot
     if (company && company.length > 0) {
       return NextResponse.json({ success: true });
     }
 
-    // Time-based trap
     if (typeof elapsedTime === "number" && elapsedTime < 3000) {
       return NextResponse.json({ success: true });
     }
@@ -88,18 +85,17 @@ export async function POST(req: Request) {
       !phone ||
       !serviceType ||
       !mode ||
-      !date ||
-      !timeSlot
+      (mode !== "presential" && (!date || !timeSlot))
     ) {
       return NextResponse.json(
-        { error: "Champs requis manquants." },
+        { error: "Por favor preencha todos os campos obrigatórios." },
         { status: 400 }
       );
     }
 
     if (!isValidEmail(email)) {
       return NextResponse.json(
-        { error: "Adresse e-mail invalide." },
+        { error: "Endereço de email inválido." },
         { status: 400 }
       );
     }
@@ -108,179 +104,193 @@ export async function POST(req: Request) {
     const modeLabel = MODE_LABELS[mode] ?? mode;
     const timeLabel = TIME_LABELS[timeSlot] ?? timeSlot;
 
-    const formattedDate = new Date(date).toLocaleDateString("fr-FR", {
-      weekday: "long",
-      year: "numeric",
-      month: "long",
-      day: "numeric",
-    });
+    const formattedDate = date
+      ? new Date(date).toLocaleDateString("pt-PT", {
+          weekday: "long",
+          year: "numeric",
+          month: "long",
+          day: "numeric",
+        })
+      : null;
 
     /* =========================================================
-       1. EMAIL TO SECRETARIAT
+    1. EMAIL PARA SECRETARIA
     ========================================================== */
 
     const adminResult = await resend.emails.send({
-      from: "Site Charles Curto <no-reply@charlescurto.fr>",
+      from: "Site Carlos Curto <no-reply@consultas.carloscurto.pt>",
       to: [process.env.CONTACT_EMAIL!],
       replyTo: email,
-      subject: `Demande de consultation - ${serviceLabel}`,
+      subject: `Pedido de Consulta - ${serviceLabel}`,
       html: `
-        <table width="100%" cellpadding="0" cellspacing="0" style="background:#f7f6f2;padding:32px 0;">
-          <tr>
-            <td align="center">
-              <table width="520" cellpadding="0" cellspacing="0" style="background:#ffffff;padding:32px;font-family:Georgia,serif;color:#1B1E23;">
-                
-                <tr>
-                  <td style="font-size:20px;font-weight:600;padding-bottom:24px;">
-                    Nouvelle demande de consultation
-                  </td>
-                </tr>
+<table width="100%" cellpadding="0" cellspacing="0" style="background:#f7f6f2;padding:32px 0;">
+<tr>
+<td align="center">
 
-                <tr>
-                  <td style="font-size:15px;line-height:1.7;">
-                    <strong>Type :</strong> ${serviceLabel}<br />
-                    <strong>Mode :</strong> ${modeLabel}<br />
-                    <strong>Date :</strong> ${formattedDate}<br />
-                    <strong>Créneau :</strong> ${timeLabel}<br /><br />
-                    <strong>Nom :</strong> ${firstName} ${lastName}<br />
-                    <strong>Email :</strong> ${email}<br />
-                    <strong>Téléphone :</strong> ${phone}
-                  </td>
-                </tr>
+<table width="520" cellpadding="0" cellspacing="0" style="background:#ffffff;padding:32px;font-family:Georgia,serif;color:#1B1E23;">
 
-                ${
-                  availability
-                    ? `
-                  <tr>
-                    <td style="padding-top:20px;font-size:15px;line-height:1.7;">
-                      <strong>Disponibilités complémentaires :</strong><br />
-                      ${escapeHtml(availability).replace(/\n/g, "<br />")}
-                    </td>
-                  </tr>
-                `
-                    : ""
-                }
+<tr>
+<td style="font-size:20px;font-weight:600;padding-bottom:24px;">
+Novo pedido de consulta
+</td>
+</tr>
 
-                <tr>
-                  <td style="padding-top:28px;">
-                    <hr style="border:none;border-top:1px solid #E5E2DA;" />
-                  </td>
-                </tr>
+<tr>
+<td style="font-size:15px;line-height:1.7;">
+<strong>Tipo:</strong> ${serviceLabel}<br/>
+<strong>Modo:</strong> ${modeLabel}<br/>
+<strong>Data:</strong> ${
+        mode === "presential" ? "A definir" : formattedDate
+      }<br/>
+<strong>Horário:</strong> ${
+        mode === "presential" ? "A definir" : timeLabel
+      }<br/><br/>
 
-                <tr>
-                  <td style="font-size:13px;color:#6B6B6B;padding-top:12px;">
-                    Message généré automatiquement depuis le site.
-                  </td>
-                </tr>
+<strong>Nome:</strong> ${firstName} ${lastName}<br/>
+<strong>Email:</strong> ${email}<br/>
+<strong>Telefone:</strong> ${phone}
+</td>
+</tr>
 
-              </table>
-            </td>
-          </tr>
-        </table>
-      `,
+${
+  availability
+    ? `
+<tr>
+<td style="padding-top:20px;font-size:15px;line-height:1.7;">
+<strong>Disponibilidades adicionais:</strong><br/>
+${escapeHtml(availability).replace(/\n/g, "<br />")}
+</td>
+</tr>
+`
+    : ""
+}
+
+<tr>
+<td style="padding-top:28px;">
+<hr style="border:none;border-top:1px solid #E5E2DA;" />
+</td>
+</tr>
+
+<tr>
+<td style="font-size:13px;color:#6B6B6B;padding-top:12px;">
+Mensagem gerada automaticamente através do site.
+</td>
+</tr>
+
+</table>
+
+</td>
+</tr>
+</table>
+`,
     });
 
     if (adminResult.error || !adminResult.data?.id) {
-      throw new Error("Admin booking email failed");
+      console.error("Resend admin error:", adminResult.error);
+      throw new Error("Falha no envio do email para a secretaria.");
     }
 
     /* =========================================================
-       2. CONFIRMATION TO CLIENT
+    2. CONFIRMAÇÃO PARA CLIENTE
     ========================================================== */
 
     await resend.emails.send({
-      from: "Charles Curto - Secrétariat <contact@charlescurto.fr>",
+      from: "Secretaria | Carlos Curto <geral@consultas.carloscurto.pt>",
       to: [email],
-      subject: "Votre demande de consultation a bien été transmise",
+      subject: "O seu pedido de consulta foi recebido",
       html: `
-        <table width="100%" cellpadding="0" cellspacing="0" style="background:#f7f6f2;padding:32px 0;">
-        <tr>
-            <td align="center">
-            <table width="520" cellpadding="0" cellspacing="0" style="background:#ffffff;padding:32px;font-family:Georgia,serif;color:#1B1E23;">
+<table width="100%" cellpadding="0" cellspacing="0" style="background:#f7f6f2;padding:32px 0;">
+<tr>
+<td align="center">
 
-                <tr>
-                <td style="font-size:18px;padding-bottom:20px;">
-                    Bonjour ${firstName},
-                </td>
-                </tr>
+<table width="520" cellpadding="0" cellspacing="0" style="background:#ffffff;padding:32px;font-family:Georgia,serif;color:#1B1E23;">
 
-                <tr>
-                <td style="font-size:15px;line-height:1.7;padding-bottom:18px;">
-                    Votre demande de consultation a bien été transmise au secrétariat
-                    de <strong>Charles Curto</strong>.
-                </td>
-                </tr>
+<tr>
+<td style="font-size:18px;padding-bottom:20px;">
+Olá ${firstName},
+</td>
+</tr>
 
-                <tr>
-                <td style="font-size:15px;line-height:1.7;padding-bottom:24px;">
-                    Nous vous contacterons par téléphone dans les meilleurs délais
-                    afin de confirmer les modalités de votre consultation.
-                </td>
-                </tr>
+<tr>
+<td style="font-size:15px;line-height:1.7;padding-bottom:18px;">
+Recebemos o seu pedido de consulta com sucesso.
+A secretaria de <strong>Carlos Curto</strong> irá analisá-lo com atenção.
+</td>
+</tr>
 
-                <!-- Summary block -->
-                <tr>
-                <td style="background:#f7f6f2;border-radius:12px;padding:20px 22px;font-size:14px;line-height:1.7;">
-                    <strong style="display:block;font-size:15px;margin-bottom:10px;">
-                    Récapitulatif de votre demande
-                    </strong>
+<tr>
+<td style="font-size:15px;line-height:1.7;padding-bottom:24px;">
+Entraremos em contacto consigo por telefone muito em breve
+para confirmar os detalhes da consulta.
+</td>
+</tr>
 
-                    <strong>Type de consultation :</strong> ${serviceLabel}<br />
-                    <strong>Mode :</strong> ${modeLabel}<br />
+<tr>
+<td style="background:#f7f6f2;border-radius:12px;padding:20px 22px;font-size:14px;line-height:1.7;">
 
-                    ${
-                    mode === "presential"
-                        ? `
-                        <strong>Date :</strong> À définir<br />
-                        <strong>Créneau :</strong> À définir
-                        `
-                        : `
-                        <strong>Date :</strong> ${formattedDate}<br />
-                        <strong>Créneau :</strong> ${timeLabel}
-                        `
-                    }
-                </td>
-                </tr>
+<strong style="display:block;font-size:15px;margin-bottom:10px;">
+Resumo do seu pedido
+</strong>
 
-                <tr>
-                <td style="font-size:14px;line-height:1.7;padding-top:22px;">
-                    Aucune action n’est requise de votre part à ce stade.
-                    Les informations ci-dessus sont communiquées à titre indicatif
-                    et seront confirmées lors de notre échange.
-                </td>
-                </tr>
+<strong>Tipo de consulta:</strong> ${serviceLabel}<br/>
+<strong>Modo:</strong> ${modeLabel}<br/>
 
-                <tr>
-                <td style="font-size:15px;line-height:1.7;padding-top:22px;">
-                    Avec nos salutations distinguées,<br />
-                    <strong>Le secrétariat de Charles Curto</strong>
-                </td>
-                </tr>
+${
+  mode === "presential"
+    ? `
+<strong>Data:</strong> A definir<br/>
+<strong>Horário:</strong> A definir
+`
+    : `
+<strong>Data:</strong> ${formattedDate}<br/>
+<strong>Horário:</strong> ${timeLabel}
+`
+}
 
-                <tr>
-                <td style="padding-top:28px;">
-                    <hr style="border:none;border-top:1px solid #E5E2DA;" />
-                </td>
-                </tr>
+</td>
+</tr>
 
-                <tr>
-                <td style="font-size:12px;color:#6B6B6B;padding-top:12px;">
-                    Ceci est un message de confirmation automatique.
-                </td>
-                </tr>
+<tr>
+<td style="font-size:14px;line-height:1.7;padding-top:22px;">
+Não é necessária qualquer ação da sua parte neste momento.
+Os detalhes finais serão confirmados pela nossa equipa.
+</td>
+</tr>
 
-            </table>
-            </td>
-        </tr>
-        </table>
-        `,
+<tr>
+<td style="font-size:15px;line-height:1.7;padding-top:22px;">
+Com os melhores cumprimentos,<br/>
+<strong>Secretaria de Carlos Curto</strong>
+</td>
+</tr>
+
+<tr>
+<td style="padding-top:28px;">
+<hr style="border:none;border-top:1px solid #E5E2DA;" />
+</td>
+</tr>
+
+<tr>
+<td style="font-size:12px;color:#6B6B6B;padding-top:12px;">
+Esta é uma mensagem automática de confirmação.
+</td>
+</tr>
+
+</table>
+
+</td>
+</tr>
+</table>
+`,
     });
 
     return NextResponse.json({ success: true });
+
   } catch (error) {
-    console.error("Booking error:", error);
+    console.error("Erro ao processar marcação:", error);
+
     return NextResponse.json(
-      { error: "Erreur lors de l’envoi de la demande." },
+      { error: "Erro ao enviar o pedido de consulta." },
       { status: 500 }
     );
   }

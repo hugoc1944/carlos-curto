@@ -9,7 +9,7 @@ export default function ContactClient() {
   const [sent, setSent] = useState(false);
   const [error, setError] = useState<string | null>(null);
   const successRef = useRef<HTMLDivElement | null>(null);
-  
+
   useEffect(() => {
     if (sent && successRef.current) {
       successRef.current.scrollIntoView({
@@ -18,13 +18,14 @@ export default function ContactClient() {
       });
     }
   }, [sent]);
+
   return (
     <section className="w-full py-24 md:py-36">
       <div className="max-w-[1200px] mx-auto px-6">
         <div className="grid grid-cols-1 md:grid-cols-2 gap-16">
 
           {/* =========================================================
-             LEFT — CONTACT INFO
+             ESQUERDA — INFORMAÇÃO DE CONTACTO
           ========================================================== */}
           <div>
             <h1 className="
@@ -34,7 +35,7 @@ export default function ContactClient() {
               leading-[1]
               text-[#1F2E5A]
             ">
-              Contact
+              Contacto
             </h1>
 
             <p className="
@@ -46,12 +47,10 @@ export default function ContactClient() {
               max-w-[420px]
               text-[#1B1E23]
             ">
-              Pour toute question, demande spécifique ou prise de contact
-              préalable, vous pouvez joindre Charles et son équipe via
-              les canaux ci-dessous.
+              Para qualquer dúvida, pedido especial ou mensagem pessoal, sinta-se à vontade para entrar em contacto com Carlos e a sua equipa pelos canais abaixo.
             </p>
 
-            {/* Email */}
+            {/* E-mail */}
             <div className="mt-10">
               <h3
                 className="
@@ -61,11 +60,11 @@ export default function ContactClient() {
                   mb-1
                 "
               >
-                Par e-mail
+                Por e-mail
               </h3>
 
               <a
-                href="mailto:contact@charlescurto.fr"
+                href="mailto:geral@carloscurto.pt"
                 className="
                   font-body
                   text-[17px]
@@ -80,10 +79,11 @@ export default function ContactClient() {
                   hover:opacity-80
                 "
               >
-                contact@charlescurto.fr
+                geral@carloscurto.pt
               </a>
             </div>
-            {/* Social */}
+
+            {/* Redes sociais */}
             <div className="mt-8">
               <h3 className="
                 font-body
@@ -91,58 +91,57 @@ export default function ContactClient() {
                 text-[20px]
                 mb-3
               ">
-                Via les réseaux officiels
+                Através das redes sociais oficiais
               </h3>
 
               <div className="flex gap-1">
-              <SocialLink
-              href="https://www.instagram.com/charlescurto.fr"
-              label="Instagram"
-            >
-              <InstagramIcon />
-              </SocialLink>
+                <SocialLink
+                  href="https://www.instagram.com/charlescurto.fr"
+                  label="Instagram"
+                >
+                  <InstagramIcon />
+                </SocialLink>
 
-              <SocialLink
-                href="https://www.facebook.com/profile.php?id=61586301611184"
-                label="Facebook"
-              >
-                <FacebookIcon />
-              </SocialLink> 
+                <SocialLink
+                  href="https://www.facebook.com/profile.php?id=61586301611184"
+                  label="Facebook"
+                >
+                  <FacebookIcon />
+                </SocialLink>
               </div>
-
             </div>
           </div>
 
           {/* =========================================================
-             RIGHT — FORM
+             DIREITA — FORMULÁRIO
           ========================================================== */}
           <div>
             <h2
-                className="
+              className="
                 font-title
                 text-[36px]
                 md:text-[42px]
                 leading-[1.1]
                 text-[#1F2E5A]
                 mb-3
-                "
+              "
             >
-                Écrire un message
+              Envie a sua mensagem
             </h2>
             <AnimatePresence mode="wait">
 
-            {!sent ? (
+              {!sent ? (
                 <motion.form
-                className="space-y-3"
-                key="contact-form"
-                initial={{ opacity: 0, y: 12 }}
-                animate={{ opacity: 1, y: 0 }}
-                exit={{ opacity: 0, y: -12 }}
-                transition={{
+                  className="space-y-3"
+                  key="contact-form"
+                  initial={{ opacity: 0, y: 12 }}
+                  animate={{ opacity: 1, y: 0 }}
+                  exit={{ opacity: 0, y: -12 }}
+                  transition={{
                     duration: 0.6,
-                    ease: [0.22, 1, 0.36, 1], // premium ease
-                }}
-                onSubmit={async (e) => {
+                    ease: [0.22, 1, 0.36, 1],
+                  }}
+                  onSubmit={async (e) => {
                     e.preventDefault();
                     setLoading(true);
                     setError(null);
@@ -150,161 +149,155 @@ export default function ContactClient() {
                     const formData = new FormData(e.currentTarget);
 
                     const payload = {
-                    firstName: formData.get("firstName"),
-                    lastName: formData.get("lastName"),
-                    email: formData.get("email"),
-                    phone: formData.get("phone"),
-                    message: formData.get("message"),
+                      firstName: formData.get("firstName"),
+                      lastName: formData.get("lastName"),
+                      email: formData.get("email"),
+                      phone: formData.get("phone"),
+                      message: formData.get("message"),
                     };
 
                     try {
-                    const res = await fetch("/api/contact", {
+                      const res = await fetch("/api/contact", {
                         method: "POST",
                         headers: { "Content-Type": "application/json" },
                         body: JSON.stringify(payload),
-                    });
+                      });
 
-                    if (!res.ok) throw new Error();
+                      if (!res.ok) throw new Error();
 
-                    setSent(true);
-                    (e.currentTarget as HTMLFormElement).reset();
+                      setSent(true);
+                      (e.currentTarget as HTMLFormElement).reset();
                     } catch {
-                    setError("Une erreur est survenue. Merci de réessayer.");
+                      setError("Algo correu mal. Por favor, tente novamente.");
                     } finally {
-                    setLoading(false);
+                      setLoading(false);
                     }
-                }}
+                  }}
                 >
-                {/* NAME */}
-                <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+                  {/* NOME */}
+                  <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
                     <div>
-                    <label className="font-body text-[15px]">Prénom*</label>
-                    <input
+                      <label className="font-body text-[15px]">Primeiro Nome*</label>
+                      <input
                         name="firstName"
                         type="text"
                         required
                         className="mt-1 w-full rounded-md px-4 py-3 bg-white border border-[#E5E2DA] focus:outline-none"
-                    />
+                      />
                     </div>
 
                     <div>
-                    <label className="font-body text-[15px]">Nom*</label>
-                    <input
+                      <label className="font-body text-[15px]">Último Nome*</label>
+                      <input
                         name="lastName"
                         type="text"
                         required
                         className="mt-1 w-full rounded-md px-4 py-3 bg-white border border-[#E5E2DA] focus:outline-none"
-                    />
+                      />
                     </div>
-                </div>
+                  </div>
 
-                {/* EMAIL / PHONE */}
-                <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+                  {/* E-MAIL / TELEFONE */}
+                  <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
                     <div>
-                    <label className="font-body text-[15px]">Adresse e-mail*</label>
-                    <input
+                      <label className="font-body text-[15px]">Endereço de E-mail*</label>
+                      <input
                         name="email"
                         type="email"
                         required
                         className="mt-1 w-full rounded-md px-4 py-3 bg-white border border-[#E5E2DA] focus:outline-none"
-                    />
+                      />
                     </div>
 
                     <div>
-                    <label className="font-body text-[15px]">
-                        Téléphone{" "}
-                        <span className="text-[13px] text-[#6B6B6B]">(optionnel)</span>
-                    </label>
-                    <input
+                      <label className="font-body text-[15px]">
+                        Telefone{" "}
+                        <span className="text-[13px] text-[#6B6B6B]">(opcional)</span>
+                      </label>
+                      <input
                         name="phone"
                         type="tel"
                         className="mt-1 w-full rounded-md px-4 py-3 bg-white border border-[#E5E2DA] focus:outline-none"
-                    />
+                      />
                     </div>
-                </div>
+                  </div>
 
-                {/* MESSAGE */}
-                <div>
-                    <label className="font-body text-[15px]">Votre message*</label>
+                  {/* MENSAGEM */}
+                  <div>
+                    <label className="font-body text-[15px]">A sua mensagem*</label>
                     <textarea
-                    name="message"
-                    required
-                    rows={5}
-                    className="mt-1 w-full rounded-md px-4 py-3 bg-white border border-[#E5E2DA] focus:outline-none resize-none"
+                      name="message"
+                      required
+                      rows={5}
+                      className="mt-1 w-full rounded-md px-4 py-3 bg-white border border-[#E5E2DA] focus:outline-none resize-none"
                     />
-                </div>
+                  </div>
 
-                {/* CONSENT */}
-                <div className="flex items-start gap-3">
+                  {/* CONSENTIMENTO */}
+                  <div className="flex items-start gap-3">
                     <input type="checkbox" required className="mt-1" />
                     <p className="font-body text-[14px] text-[#6B6B6B] leading-[1.5]">
-                    J’accepte que mes données soient utilisées uniquement dans le cadre de
-                    cette prise de contact, conformément à la{" "}
-                    <a
-                        href="/politique-de-confidentialite"
+                      Concordo que os meus dados sejam usados exclusivamente no âmbito deste contacto, conforme a{" "}
+                      <a
+                        href="/politica-de-privacidade"
                         className="underline hover:opacity-80 transition"
-                    >
-                        politique de confidentialité
-                    </a>.
+                      >
+                        política de privacidade
+                      </a>.
                     </p>
-                </div>
+                  </div>
 
-                {/* SUBMIT */}
-                <div className="pt-4">
+                  {/* SUBMETER */}
+                  <div className="pt-4">
                     <Button variant="authority" type="submit">
-                    {loading ? "Envoi en cours…" : "Envoyer le message"}
+                      {loading ? "A enviar…" : "Enviar mensagem"}
                     </Button>
 
                     {error && (
-                    <p className="font-body text-[15px] text-red-600 mt-4">
+                      <p className="font-body text-[15px] text-red-600 mt-4">
                         {error}
-                    </p>
-                            )}
-                        </div>
-                        </motion.form>
-                    ) : (
-                        <motion.div
-                        ref={successRef}
-                        className="
-                            mt-12
-                            max-w-[420px]
-                            font-body
-                            text-[#1F2E5A]
-                            space-y-4
-                        "
-                        initial={{ opacity: 0, y: 16 }}
-                        animate={{ opacity: 1, y: 0 }}
-                        transition={{
-                            duration: 0.8,
-                            ease: [0.22, 1, 0.36, 1],
-                        }}
-                        >
-                        <p className="text-[20px] font-medium">
-                            Votre message a bien été envoyé.
-                        </p>
-
-                        <p className="text-[17px] leading-[1.6]">
-                            Le secrétariat de <strong>Charles Curto</strong> a bien reçu votre
-                            demande. Elle sera étudiée avec attention, et une réponse vous sera
-                            apportée dans les meilleurs délais.
-                        </p>
-
-                        <p className="text-[16px] text-[#6B6B6B]">
-                            Vous pouvez désormais quitter cette page en toute tranquillité.
-                        </p>
-                        </motion.div>
+                      </p>
                     )}
-                </AnimatePresence>
-            </div>
+                  </div>
+                </motion.form>
+              ) : (
+                <motion.div
+                  ref={successRef}
+                  className="
+                      mt-12
+                      max-w-[420px]
+                      font-body
+                      text-[#1F2E5A]
+                      space-y-4
+                  "
+                  initial={{ opacity: 0, y: 16 }}
+                  animate={{ opacity: 1, y: 0 }}
+                  transition={{
+                    duration: 0.8,
+                    ease: [0.22, 1, 0.36, 1],
+                  }}
+                >
+                  <p className="text-[20px] font-medium">
+                    A sua mensagem foi enviada com sucesso.
+                  </p>
 
+                  <p className="text-[17px] leading-[1.6]">
+                    O secretariado de <strong>Carlos Curto</strong> recebeu o seu pedido. Será tratado com atenção, e uma resposta será enviada o mais breve possível.
+                  </p>
+
+                  <p className="text-[16px] text-[#6B6B6B]">
+                    Pode fechar esta página em total tranquilidade.
+                  </p>
+                </motion.div>
+              )}
+            </AnimatePresence>
+          </div>
 
         </div>
       </div>
     </section>
   );
 }
-
-
 
 function SocialLink({
   href,
@@ -336,7 +329,7 @@ function SocialLink({
   );
 }
 
-/* ---------- Icons ---------- */
+/* ---------- Ícones ---------- */
 
 function InstagramIcon() {
   return (

@@ -23,9 +23,9 @@ export async function generateMetadata(
     description: ecrit.meta.description,
 
     openGraph: {
-        type: "article",
-        title: ecrit.meta.title,
-        description: ecrit.meta.description,
+      type: "article",
+      title: ecrit.meta.title,
+      description: ecrit.meta.description,
     },
   };
 }
@@ -43,8 +43,8 @@ export default async function EcritPage(
       <section className="w-full pt-32 pb-40">
         <article className="max-w-[780px] mx-auto px-6">
           <div className="mb-12">
-            <VeilLink href="/ecrits" className="cursor-pointer inline-flex gap-2 text-[13px] tracking-[0.28em] uppercase text-[#8F8A7E] hover:text-[#C7A36A]">
-              ← Tous les écrits
+            <VeilLink href="/reflexoes" className="cursor-pointer inline-flex gap-2 text-[13px] tracking-[0.28em] uppercase text-[#8F8A7E] hover:text-[#C7A36A]">
+              ← Todos os escritos
             </VeilLink>
           </div>
 
@@ -55,7 +55,7 @@ export default async function EcritPage(
 
             <div className="mt-6 flex flex-wrap gap-x-4 gap-y-2 text-[#9A9A9A]">
               <span className="text-[13px] uppercase tracking-[0.2em]">
-                Lecture {ecrit.meta.readingTime}
+                Leitura {ecrit.meta.readingTime}
               </span>
 
               {ecrit.meta.themes.map((theme) => (

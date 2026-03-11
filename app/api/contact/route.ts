@@ -36,14 +36,14 @@ export async function POST(req: Request) {
 
     if (!firstName || !lastName || !email || !message) {
       return NextResponse.json(
-        { error: "Champs requis manquants." },
+        { error: "Faltam campos obrigatórios. Por favor, preencha todos os campos indicados." },
         { status: 400 }
       );
     }
 
     if (!isValidEmail(email)) {
       return NextResponse.json(
-        { error: "Adresse e-mail invalide." },
+        { error: "O endereço de e-mail fornecido não é válido. Por favor, verifique e tente novamente." },
         { status: 400 }
       );
     }
@@ -51,13 +51,13 @@ export async function POST(req: Request) {
     const safeMessage = escapeHtml(message).replace(/\n/g, "<br />");
 
     /* =========================================================
-       1. ADMIN EMAIL (PRIVATE, STRUCTURED)
+       1. EMAIL PARA O ADMINISTRADOR (PRIVADO, DETALHADO)
     ========================================================== */
     const adminResult = await resend.emails.send({
-      from: "Site Charles Curto <no-reply@charlescurto.fr>",
+      from: "Site Carlos Curto <no-reply@consultas.carloscurto.pt>",
       to: [process.env.CONTACT_EMAIL!],
       replyTo: email,
-      subject: "Nouveau message - Site Charles Curto",
+      subject: "Nova mensagem recebida - Site Carlos Curto",
       html: `
         <table width="100%" cellpadding="0" cellspacing="0" style="background:#f7f6f2;padding:32px 0;">
           <tr>
@@ -65,15 +65,15 @@ export async function POST(req: Request) {
               <table width="520" cellpadding="0" cellspacing="0" style="background:#ffffff;padding:32px;font-family:Georgia,serif;color:#1B1E23;">
                 <tr>
                   <td style="font-size:20px;font-weight:600;padding-bottom:24px;">
-                    Nouveau message reçu
+                    Uma nova mensagem chegou
                   </td>
                 </tr>
 
                 <tr>
                   <td style="font-size:15px;line-height:1.6;">
-                    <strong>Nom :</strong> ${firstName} ${lastName}<br />
-                    <strong>Email :</strong> ${email}<br />
-                    ${phone ? `<strong>Téléphone :</strong> ${phone}<br />` : ""}
+                    <strong>Nome:</strong> ${firstName} ${lastName}<br />
+                    <strong>Email:</strong> ${email}<br />
+                    ${phone ? `<strong>Telefone:</strong> ${phone}<br />` : ""}
                   </td>
                 </tr>
 
@@ -88,7 +88,6 @@ export async function POST(req: Request) {
                     ${safeMessage}
                   </td>
                 </tr>
-
               </table>
             </td>
           </tr>
@@ -97,16 +96,16 @@ export async function POST(req: Request) {
     });
 
     if (adminResult.error || !adminResult.data?.id) {
-        throw new Error("Admin email failed");
+      throw new Error("Falha no envio do email para o administrador.");
     }
 
     /* =========================================================
-       2. USER CONFIRMATION (ELEGANT, HUMAN)
+       2. CONFIRMAÇÃO PARA O UTILIZADOR (ELEGANTE E HUMANO)
     ========================================================== */
     await resend.emails.send({
-      from: "Charles Curto - Secrétariat <contact@charlescurto.fr>",
+      from: "Carlos Curto - Secretaria <no-reply@consultas.carloscurto.pt>",
       to: [email],
-      subject: "Votre message a bien été reçu",
+      subject: "A sua mensagem foi recebida com sucesso",
       html: `
         <table width="100%" cellpadding="0" cellspacing="0" style="background:#f7f6f2;padding:32px 0;">
           <tr>
@@ -115,28 +114,27 @@ export async function POST(req: Request) {
                 
                 <tr>
                   <td style="font-size:18px;padding-bottom:20px;">
-                    Bonjour ${firstName},
+                    Caro(a) ${firstName},
                   </td>
                 </tr>
 
                 <tr>
                   <td style="font-size:15px;line-height:1.7;padding-bottom:16px;">
-                    Votre message a bien été transmis au secrétariat de
-                    <strong>Charles Curto</strong>.
+                    A sua mensagem foi enviada para a Secretaria de
+                    <strong>Carlos Curto</strong>. 
                   </td>
                 </tr>
 
                 <tr>
                   <td style="font-size:15px;line-height:1.7;padding-bottom:16px;">
-                    Il sera étudié avec attention. Une réponse vous sera apportée
-                    dans les meilleurs délais, selon les disponibilités.
+                    Garantimos que será lida com a máxima atenção e faremos os possíveis para responder com brevidade, respeitando a ordem das mensagens recebidas.
                   </td>
                 </tr>
 
                 <tr>
                   <td style="font-size:15px;line-height:1.7;">
-                    Avec nos salutations distinguées,<br />
-                    <strong>Le secrétariat de Charles Curto</strong>
+                    Com profunda gratidão,<br />
+                    <strong>A Secretaria de Carlos Curto</strong>
                   </td>
                 </tr>
 
@@ -148,10 +146,9 @@ export async function POST(req: Request) {
 
                 <tr>
                   <td style="font-size:12px;color:#6B6B6B;padding-top:12px;">
-                    Ceci est un message de confirmation automatique.
+                    Esta é uma mensagem automática para confirmar o recebimento. 
                   </td>
                 </tr>
-
               </table>
             </td>
           </tr>
@@ -162,9 +159,9 @@ export async function POST(req: Request) {
     return NextResponse.json({ success: true });
 
   } catch (error) {
-    console.error("Contact form error:", error);
+    console.error("Erro no formulário de contacto:", error);
     return NextResponse.json(
-      { error: "Erreur lors de l’envoi du message." },
+      { error: "Ocorreu um erro ao enviar a mensagem. Por favor, tente novamente mais tarde." },
       { status: 500 }
     );
   }

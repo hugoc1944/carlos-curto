@@ -1,5 +1,7 @@
 import type { MetadataRoute } from "next";
 
+const BASE_URL = "https://carloscurto.pt";
+
 export default function robots(): MetadataRoute.Robots {
   return {
     rules: [
@@ -8,9 +10,11 @@ export default function robots(): MetadataRoute.Robots {
         allow: "/",
         disallow: [
           "/api/",
+          "/_next/",
+          "/admin/",
         ],
       },
     ],
-    sitemap: "/sitemap.xml",
+    sitemap: `${BASE_URL}/sitemap.xml`,
   };
 }
